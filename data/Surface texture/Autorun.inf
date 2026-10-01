@@ -1,0 +1,7 @@
+[autorun]
+icon=Images\bigG.ico
+open=ViewGSSImanuals.exe
+label=GSSI Manuals April 2011
+action=View and Print GSSI Manuals
+shell\run4105=View and Print GSSI Manuals
+shell\run4105\command=ViewGSSImanuals.exe

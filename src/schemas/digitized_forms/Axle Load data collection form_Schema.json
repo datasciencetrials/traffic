@@ -1,0 +1,46 @@
+{
+    "title": "Axle Load Data Collection Form",
+    "type": "object",
+    "properties": {
+        "day": {
+            "type": "string",
+            "title": "Day:",
+            "description": "Enter the specified Day:."
+        },
+        "date____________": {
+            "type": "number",
+            "title": "Date: \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.",
+            "description": "Numeric value required for Date: \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.."
+        },
+        "job_no": {
+            "type": "string",
+            "title": "Job No:\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026..",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "day_no123": {
+            "type": "string",
+            "title": "Day No(1,2,3)",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "link_name": {
+            "type": "string",
+            "title": "Link Name:\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.",
+            "description": "Enter the specified Link Name:\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.."
+        },
+        "night": {
+            "type": "string",
+            "title": "Night:",
+            "description": "Enter the specified Night:."
+        }
+    }
+}

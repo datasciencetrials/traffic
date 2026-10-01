@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DZX xmlns="www.geophysical.com/DZX/1.02">
+<GlobalProperties>
+   <verticalUnit>cm</verticalUnit>
+   <horizontalUnit>cm</horizontalUnit>
+   <dielectric>6.500000</dielectric>
+</GlobalProperties>
+<DataCollection>
+   <system>SS_MINI</system>
+   <softwareVersion>1 3 0 0</softwareVersion>
+   <collectionMode>2D</collectionMode>
+   <sLastUpdateDate>SEP_26_2012</sLastUpdateDate>
+   <sLastUpdateTime>13:21:12</sLastUpdateTime>
+   <BaseGain>13.400001</BaseGain>
+   <BaseGainAdj>0.200000</BaseGainAdj>
+   <TrOffset>37811</TrOffset>
+   <dielectricMethod>0</dielectricMethod>
+   <Ctable>3</Ctable>
+   <Xtable>2</Xtable>
+</DataCollection>
+</DZX>

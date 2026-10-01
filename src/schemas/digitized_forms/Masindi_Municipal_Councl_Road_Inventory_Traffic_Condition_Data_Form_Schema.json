@@ -1,0 +1,91 @@
+{
+    "title": "Masindi Municipal Councl Road Inventory Traffic Condition Data Form",
+    "type": "object",
+    "properties": {
+        "road_length_km": {
+            "type": "number",
+            "title": "Road Length (km)",
+            "description": "Numeric value required for Road Length (km)."
+        },
+        "terrain": {
+            "type": "string",
+            "title": "Terrain",
+            "description": "Enter the specified Terrain."
+        },
+        "masindi_municipal_council_urban__road_condition_traffic_data": {
+            "type": "string",
+            "title": "MASINDI MUNICIPAL COUNCIL URBAN ROAD CONDITION TRAFFIC DATA",
+            "description": "Enter the specified MASINDI MUNICIPAL COUNCIL URBAN ROAD CONDITION TRAFFIC DATA."
+        },
+        "road_class": {
+            "type": "string",
+            "title": "Road Class",
+            "description": "Enter the specified Road Class."
+        },
+        "current_drainage": {
+            "type": "string",
+            "title": "Current Drainage",
+            "description": "Enter the specified Current Drainage."
+        },
+        "traffic_data_aadt": {
+            "type": "string",
+            "title": "Traffic Data (AADT)",
+            "description": "Enter the specified Traffic Data (AADT)."
+        },
+        "10-50": {
+            "type": "string",
+            "title": "10 50",
+            "description": "Enter the specified 10 50."
+        },
+        "road_condition": {
+            "type": "string",
+            "title": "Road Condition",
+            "description": "Enter the specified Road Condition."
+        },
+        "road_number": {
+            "type": "string",
+            "title": "Road Number",
+            "description": "Enter the specified Road Number."
+        },
+        "road_name": {
+            "type": "string",
+            "title": "Road Name",
+            "description": "Enter the specified Road Name."
+        },
+        "iii": {
+            "type": "string",
+            "title": "III",
+            "description": "Enter the specified III."
+        },
+        "flat": {
+            "type": "string",
+            "title": "Flat",
+            "description": "Enter the specified Flat."
+        },
+        "item_no": {
+            "type": "string",
+            "title": "Item No.",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "good": {
+            "type": "string",
+            "title": "Good",
+            "description": "Enter the specified Good."
+        },
+        "rwebikohi_road": {
+            "type": "string",
+            "title": "Rwebikohi Road",
+            "description": "Enter the specified Rwebikohi Road."
+        },
+        "central_division": {
+            "type": "string",
+            "title": "CENTRAL DIVISION",
+            "description": "Enter the specified CENTRAL DIVISION."
+        }
+    }
+}

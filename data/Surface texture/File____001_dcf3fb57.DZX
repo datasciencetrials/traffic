@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DZX xmlns="www.geophysical.com/DZX/1.02">
+<GlobalProperties>
+   <verticalUnit>cm</verticalUnit>
+   <horizontalUnit>cm</horizontalUnit>
+   <dielectric>6.500000</dielectric>
+</GlobalProperties>
+<DataCollection>
+   <system>SS_MINI</system>
+   <softwareVersion>1 3 0 0</softwareVersion>
+   <collectionMode>2D</collectionMode>
+   <sLastUpdateDate>JUL_24_2012</sLastUpdateDate>
+   <sLastUpdateTime>05:50:52</sLastUpdateTime>
+   <BaseGain>13.400001</BaseGain>
+   <BaseGainAdj>0.200000</BaseGainAdj>
+   <TrOffset>37850</TrOffset>
+   <dielectricMethod>0</dielectricMethod>
+   <Ctable>1</Ctable>
+   <Xtable>2</Xtable>
+   <TargetGroup>
+      <groupName>Auto Target</groupName>
+      <outline>1</outline>
+      <link>0</link>
+      <color>2</color>
+      <display>1</display>
+      <sizePx>6</sizePx>
+      <velMethod>0</velMethod>
+      <defaultVelocity>11.766968</defaultVelocity>
+      <diameter>1.247000</diameter>
+      <TargetWayPt>
+         <scanSampChanProp>31,54,0,0</scanSampChanProp>
+         <timeAmpDepVel>0.000000,-357897376.000000,40.000000,11.766968</timeAmpDepVel>
+      </TargetWayPt>
+   </TargetGroup>
+   <TargetGroup>
+      <groupName>Auto Target</groupName>
+      <outline>1</outline>
+      <link>0</link>
+      <color>2</color>
+      <display>1</display>
+      <sizePx>6</sizePx>
+      <velMethod>0</velMethod>
+      <defaultVelocity>11.766968</defaultVelocity>
+      <diameter>1.247000</diameter>
+      <TargetWayPt>
+         <scanSampChanProp>139,36,0,0</scanSampChanProp>
+         <timeAmpDepVel>0.000000,250085104.000000,40.000000,11.766968</timeAmpDepVel>
+      </TargetWayPt>
+   </TargetGroup>
+   <TargetGroup>
+      <groupName>Auto Target</groupName>
+      <outline>1</outline>
+      <link>0</link>
+      <color>2</color>
+      <display>1</display>
+      <sizePx>6</sizePx>
+      <velMethod>0</velMethod>
+      <defaultVelocity>11.766968</defaultVelocity>
+      <diameter>1.247000</diameter>
+      <TargetWayPt>
+         <scanSampChanProp>202,42,0,0</scanSampChanProp>
+         <timeAmpDepVel>0.000000,1088576768.000000,40.000000,11.766968</timeAmpDepVel>
+      </TargetWayPt>
+   </TargetGroup>
+   <TargetGroup>
+      <groupName>Auto Target</groupName>
+      <outline>1</outline>
+      <link>0</link>
+      <color>2</color>
+      <display>1</display>
+      <sizePx>6</sizePx>
+      <velMethod>0</velMethod>
+      <defaultVelocity>11.766968</defaultVelocity>
+      <diameter>1.247000</diameter>
+      <TargetWayPt>
+         <scanSampChanProp>303,44,0,0</scanSampChanProp>
+         <timeAmpDepVel>0.000000,1179534336.000000,40.000000,11.766968</timeAmpDepVel>
+      </TargetWayPt>
+   </TargetGroup>
+   <TargetGroup>
+      <groupName>Auto Target</groupName>
+      <outline>1</outline>
+      <link>0</link>
+      <color>2</color>
+      <display>1</display>
+      <sizePx>6</sizePx>
+      <velMethod>0</velMethod>
+      <defaultVelocity>11.766968</defaultVelocity>
+      <diameter>1.247000</diameter>
+      <TargetWayPt>
+         <scanSampChanProp>444,46,0,0</scanSampChanProp>
+         <timeAmpDepVel>0.000000,-1031346624.000000,40.000000,11.766968</timeAmpDepVel>
+      </TargetWayPt>
+   </TargetGroup>
+</DataCollection>
+</DZX>

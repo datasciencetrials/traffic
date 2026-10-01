@@ -1,0 +1,127 @@
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	color: #003399;
+	font-weight: bold;
+	margin-top: 12px;
+	padding-left: 6px;
+	padding-bottom: 4px;
+	vertical-align:middle;
+	line-height: normal;
+}
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #003399;
+	font-weight: normal;
+}
+.maintext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #003366;
+	text-align: left;
+}
+#top {
+	color: #003399;
+	text-align: right;
+	position: relative;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	font: normal 16px Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	height: 75px;
+	vertical-align: bottom;
+}
+#top2 {
+	color: #003399;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font: normal 28px Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	height: 75px;
+	vertical-align: bottom;
+}
+#middle {
+	height: 390px;
+	vertical-align:top;
+}
+#footer1 {
+	color: #003399;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	padding-top: 10px;
+	font: normal 14px Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	height: 30px;
+	vertical-align:middle;
+}
+#footer2 {
+	text-align: left;
+	position: relative;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	height: 30px;
+	vertical-align:bottom;
+}
+.mainlink {
+	color: #003399;
+	text-decoration: underline;
+	font: 16px Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+A.mainlink:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #003399;
+	text-decoration: underline;
+}
+A.mainlink:hover {
+	color: #0066CC;
+	text-decoration: underline;
+}
+.seclink {
+	font: 14px Verdana, Arial, Helvetica, sans-serif #0066CC;
+	color: #0066CC;
+}
+
+A.seclink:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #0066CC;
+	text-decoration: underline;
+}
+A.seclink:hover {
+	color: #003399;
+	font-weight:bold;
+	text-decoration: underline;
+}
+.footerlink {
+	font: 14px Verdana, Arial, Helvetica, sans-serif;
+	color: #003366;
+	text-decoration: underline;
+}
+A.footerlink:visited {
+	color: #003366;
+}
+A.footerlink:hover {
+	color: #CCCCCC;
+}
+	
+/* styling for manuals table */	
+#manlist{margin-left: 20px; margin-top: 10px; vertical-align:middle;}
+#manlist table{border:0; vertical-align: middle; border-collapse:collapse;}
+#manlist td{padding:3px 6px; vertical-align: middle;}
+
+/* styling for small manuals table */	
+#smalllist{vertical-align:middle;}
+#smalllist table{border:0; vertical-align: middle; border-collapse:collapse;}
+#smalllist td{vertical-align: middle; padding:3px 6px;
+}
