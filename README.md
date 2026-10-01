@@ -1,2 +1,3 @@
-# uganda_ntis
-Uganda National Roads Traffic Management System
+# Traffic System
+
+Machine learning traffic data and statistics.
