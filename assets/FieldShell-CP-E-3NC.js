@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/DataCaptureHub-2aeKdCHZ.js","assets/index-traffic-DiXXHRlX.js","assets/index-B6GNPccJ.css","assets/ProtectedRoute-CuBdV0zm.js","assets/supabase-Bp_hF5bI.js","assets/createLucideIcon-H_qWDjMI.js","assets/activity-B5PkaVbO.js","assets/PendingSubmissions-Dfb1yZaX.js"])))=>i.map(i=>d[i]);
-import{b as c,r,j as e,l as p,_ as l}from"./index-traffic-DiXXHRlX.js";import{c as n}from"./createLucideIcon-H_qWDjMI.js";/**
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/DataCaptureHub-2aeKdCHZ.js","assets/index-traffic-fixed-fc8d9b9.js","assets/index-B6GNPccJ.css","assets/ProtectedRoute-CuBdV0zm.js","assets/supabase-Bp_hF5bI.js","assets/createLucideIcon-H_qWDjMI.js","assets/activity-B5PkaVbO.js","assets/PendingSubmissions-Dfb1yZaX.js"])))=>i.map(i=>d[i]);
+import{b as c,r,j as e,l as p,_ as l}from"./index-traffic-fixed-fc8d9b9.js";import{c as n}from"./createLucideIcon-H_qWDjMI.js";/**
  * @license lucide-react v0.469.0 - ISC
  *
  * This source code is licensed under the ISC license.
