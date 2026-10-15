@@ -1,0 +1,130 @@
+{
+    "title": "Axle Load Survey Form",
+    "type": "object",
+    "properties": {
+        "date________________________": {
+            "type": "number",
+            "title": "Date:",
+            "description": "Numeric value required for Date:."
+        },
+        "axle_number": {
+            "type": "number",
+            "title": "AXLE NUMBER",
+            "description": "Numeric value required for AXLE NUMBER."
+        },
+        "surveyed_by": {
+            "type": "string",
+            "title": "Surveyed By:",
+            "description": "Enter the specified Surveyed By:."
+        },
+        "day_no_12________________": {
+            "type": "string",
+            "title": "Day No. (1,2..):",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "station": {
+            "type": "string",
+            "title": "Station:",
+            "description": "Enter the specified Station:."
+        },
+        "direction______________________": {
+            "type": "string",
+            "title": "Direction:",
+            "description": "Direction 1 (Forward/Increasing) or Direction 2 (Reverse/Decreasing).",
+            "enum": [
+                "Direction 1",
+                "Direction 2"
+            ]
+        },
+        "sheet_no_____________________": {
+            "type": "string",
+            "title": "Sheet No.",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "road_link": {
+            "type": "string",
+            "title": "ROAD LINK",
+            "description": "Enter the specified ROAD LINK."
+        },
+        "vehicle_model": {
+            "type": "string",
+            "title": "Vehicle Model",
+            "description": "Enter the specified Vehicle Model."
+        },
+        "origin_town": {
+            "type": "string",
+            "title": "Origin Town",
+            "description": "Enter the specified Origin Town."
+        },
+        "axle_configuration": {
+            "type": "number",
+            "title": "Axle Configuration",
+            "description": "Numeric value required for Axle Configuration."
+        },
+        "destination_town": {
+            "type": "string",
+            "title": "Destination Town",
+            "description": "Enter the specified Destination Town."
+        },
+        "no": {
+            "type": "string",
+            "title": "No.",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "vehicle_type": {
+            "type": "string",
+            "title": "Vehicle Type",
+            "description": "Enter the specified Vehicle Type."
+        },
+        "comments": {
+            "type": "string",
+            "title": "Comments",
+            "description": "Enter the specified Comments."
+        },
+        "axle_load_survey_form": {
+            "type": "number",
+            "title": "AXLE LOAD SURVEY FORM",
+            "description": "Numeric value required for AXLE LOAD SURVEY FORM."
+        },
+        "night": {
+            "type": "string",
+            "title": "Night",
+            "description": "Enter the specified Night."
+        },
+        "ministry_of_works_and_transport": {
+            "type": "string",
+            "title": "MINISTRY OF WORKS AND TRANSPORT",
+            "description": "Enter the specified MINISTRY OF WORKS AND TRANSPORT."
+        },
+        "plate_number": {
+            "type": "string",
+            "title": "Plate Number",
+            "description": "Enter the specified Plate Number."
+        },
+        "day__________________________": {
+            "type": "string",
+            "title": "Day:",
+            "description": "Enter the specified Day:."
+        },
+        "day": {
+            "type": "string",
+            "title": "Day",
+            "description": "Enter the specified Day."
+        }
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "title": "OD Survey Form (kampala Hoima)",
+    "type": "object",
+    "properties": {
+        "station": {
+            "type": "string",
+            "title": "STATION:",
+            "description": "Enter the specified STATION:."
+        },
+        "kampala_-_hoima_road": {
+            "type": "string",
+            "title": "KAMPALA HOIMA ROAD",
+            "description": "Enter the specified KAMPALA HOIMA ROAD."
+        },
+        "vehicle_origin_and_destination_survey_form": {
+            "type": "string",
+            "title": "VEHICLE ORIGIN AND DESTINATION SURVEY FORM",
+            "description": "Enter the specified VEHICLE ORIGIN AND DESTINATION SURVEY FORM."
+        },
+        "to": {
+            "type": "string",
+            "title": "TO:",
+            "description": "Enter the specified TO:."
+        },
+        "night_count": {
+            "type": "number",
+            "title": "NIGHT COUNT",
+            "description": "Numeric value required for NIGHT COUNT."
+        },
+        "date": {
+            "type": "number",
+            "title": "DATE:",
+            "description": "Numeric value required for DATE:."
+        },
+        "day": {
+            "type": "string",
+            "title": "DAY:",
+            "description": "Enter the specified DAY:."
+        },
+        "direction": {
+            "type": "string",
+            "title": "DIRECTION",
+            "description": "Direction 1 (Forward/Increasing) or Direction 2 (Reverse/Decreasing).",
+            "enum": [
+                "Direction 1",
+                "Direction 2"
+            ]
+        },
+        "from": {
+            "type": "string",
+            "title": "FROM:",
+            "description": "Enter the specified FROM:."
+        },
+        "hoima": {
+            "type": "string",
+            "title": "HOIMA",
+            "description": "Enter the specified HOIMA."
+        },
+        "kampala": {
+            "type": "string",
+            "title": "KAMPALA",
+            "description": "Enter the specified KAMPALA."
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "title": "Axle Load Survey Form",
+    "type": "object",
+    "properties": {
+        "road_link": {
+            "type": "string",
+            "title": "ROAD LINK",
+            "description": "Enter the specified ROAD LINK."
+        },
+        "sheet_no______": {
+            "type": "string",
+            "title": "Sheet No.",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "day": {
+            "type": "string",
+            "title": "Day",
+            "description": "Enter the specified Day."
+        },
+        "surveyed_by": {
+            "type": "string",
+            "title": "Surveyed By:",
+            "description": "Enter the specified Surveyed By:."
+        },
+        "axle_load_survey_form": {
+            "type": "number",
+            "title": "AXLE LOAD SURVEY FORM",
+            "description": "Numeric value required for AXLE LOAD SURVEY FORM."
+        },
+        "night": {
+            "type": "string",
+            "title": "Night",
+            "description": "Enter the specified Night."
+        },
+        "day_no_12________________": {
+            "type": "string",
+            "title": "Day No. (1,2..):",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "uganda_national_roads_authority": {
+            "type": "string",
+            "title": "UGANDA NATIONAL ROADS AUTHORITY",
+            "description": "Enter the specified UGANDA NATIONAL ROADS AUTHORITY."
+        },
+        "day__________________________": {
+            "type": "string",
+            "title": "Day:",
+            "description": "Enter the specified Day:."
+        },
+        "date__________": {
+            "type": "number",
+            "title": "Date",
+            "description": "Numeric value required for Date."
+        },
+        "station": {
+            "type": "string",
+            "title": "Station:",
+            "description": "Enter the specified Station:."
+        },
+        "direction______________________": {
+            "type": "string",
+            "title": "Direction:",
+            "description": "Direction 1 (Forward/Increasing) or Direction 2 (Reverse/Decreasing).",
+            "enum": [
+                "Direction 1",
+                "Direction 2"
+            ]
+        }
+    }
+}

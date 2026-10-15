@@ -1,0 +1,65 @@
+{
+    "title": "OD Survey Form (hoima Masindi)",
+    "type": "object",
+    "properties": {
+        "station": {
+            "type": "string",
+            "title": "STATION:",
+            "description": "Enter the specified STATION:."
+        },
+        "vehicle_origin_and_destination_survey_form": {
+            "type": "string",
+            "title": "VEHICLE ORIGIN AND DESTINATION SURVEY FORM",
+            "description": "Enter the specified VEHICLE ORIGIN AND DESTINATION SURVEY FORM."
+        },
+        "to": {
+            "type": "string",
+            "title": "TO:",
+            "description": "Enter the specified TO:."
+        },
+        "masindi": {
+            "type": "string",
+            "title": "MASINDI",
+            "description": "Enter the specified MASINDI."
+        },
+        "night_count": {
+            "type": "number",
+            "title": "NIGHT COUNT",
+            "description": "Numeric value required for NIGHT COUNT."
+        },
+        "date": {
+            "type": "number",
+            "title": "DATE:",
+            "description": "Numeric value required for DATE:."
+        },
+        "day": {
+            "type": "string",
+            "title": "DAY:",
+            "description": "Enter the specified DAY:."
+        },
+        "direction": {
+            "type": "string",
+            "title": "DIRECTION",
+            "description": "Direction 1 (Forward/Increasing) or Direction 2 (Reverse/Decreasing).",
+            "enum": [
+                "Direction 1",
+                "Direction 2"
+            ]
+        },
+        "hoima_-_masindi_road": {
+            "type": "string",
+            "title": "HOIMA MASINDI ROAD",
+            "description": "Enter the specified HOIMA MASINDI ROAD."
+        },
+        "from": {
+            "type": "string",
+            "title": "FROM:",
+            "description": "Enter the specified FROM:."
+        },
+        "hoima": {
+            "type": "string",
+            "title": "HOIMA",
+            "description": "Enter the specified HOIMA."
+        }
+    }
+}

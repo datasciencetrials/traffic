@@ -1,0 +1,40 @@
+{
+    "title": "OD Survey Form",
+    "type": "object",
+    "properties": {
+        "station": {
+            "type": "string",
+            "title": "STATION:",
+            "description": "Enter the specified STATION:."
+        },
+        "vehicle_origin_and_destination_survey_form": {
+            "type": "string",
+            "title": "VEHICLE ORIGIN AND DESTINATION SURVEY FORM",
+            "description": "Enter the specified VEHICLE ORIGIN AND DESTINATION SURVEY FORM."
+        },
+        "date": {
+            "type": "number",
+            "title": "DATE:",
+            "description": "Numeric value required for DATE:."
+        },
+        "day": {
+            "type": "string",
+            "title": "DAY:",
+            "description": "Enter the specified DAY:."
+        },
+        "surveyor": {
+            "type": "string",
+            "title": "SURVEYOR:",
+            "description": "Enter the specified SURVEYOR:."
+        },
+        "direction": {
+            "type": "string",
+            "title": "DIRECTION",
+            "description": "Direction 1 (Forward/Increasing) or Direction 2 (Reverse/Decreasing).",
+            "enum": [
+                "Direction 1",
+                "Direction 2"
+            ]
+        }
+    }
+}

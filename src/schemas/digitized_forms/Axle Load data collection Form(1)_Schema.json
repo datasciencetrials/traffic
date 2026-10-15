@@ -1,0 +1,31 @@
+{
+    "title": "Axle Load Data Collection Form(1)",
+    "type": "object",
+    "properties": {
+        "road_link_": {
+            "type": "string",
+            "title": "ROAD LINK: \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.\u2026\u2026..\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
+            "description": "Enter the specified ROAD LINK: \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.\u2026\u2026..\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026."
+        },
+        "date_": {
+            "type": "number",
+            "title": "DATE: \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.....\u2026.\u2026\u2026\u2026\u2026\u2026\u2026..",
+            "description": "Numeric value required for DATE: \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.....\u2026.\u2026\u2026\u2026\u2026\u2026\u2026..."
+        },
+        "sheet_no_": {
+            "type": "string",
+            "title": "SHEET NO.: \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026...\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
+            "description": "Select Yes or No.",
+            "enum": [
+                "Yes",
+                "No",
+                "N/A"
+            ]
+        },
+        "axle_load_survey": {
+            "type": "number",
+            "title": "AXLE LOAD SURVEY",
+            "description": "Numeric value required for AXLE LOAD SURVEY."
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "title": "ATC All Days Survey Data Formula Workbook",
+    "type": "object",
+    "properties": {
+        "total_volume": {
+            "type": "number",
+            "title": "Total Volume",
+            "description": "Numeric value required for Total Volume."
+        },
+        "atc_traffic_count_dashboard": {
+            "type": "number",
+            "title": "ATC Traffic Count Dashboard",
+            "description": "Numeric value required for ATC Traffic Count Dashboard."
+        }
+    }
+}
