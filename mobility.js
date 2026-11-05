@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const fmt = new Intl.NumberFormat('en-UG', { maximumFractionDigits: 0 });
   const source = 'data/traffic_dashboard_data.json';
-  let dataset, current, filtered = [], selected, map, markers, tiles, area, areaStart, areaBounds;
+  let dataset, current, filtered = [], selected, map, markers, tiles, area, areaStart, areaBounds, priorYearByKey;
   const palette = ['#64c0cf', '#319db9', '#147ba6', '#075d92'];
   const text = value => value === null || value === undefined || String(value).trim() === '' ? 'Not supplied' : String(value).trim();
   const decodedLink = value => text(value).replaceAll('_', ' ').replace(/\bLink(\d+)\b/gi, 'Link $1');
@@ -17,9 +17,16 @@
     return null;
   };
   const stationKey = row => text(row.Section_ID) !== 'Not supplied' ? decodedLink(row.Section_ID) : decodedLink(row.Link_ID);
-  const status = row => Number(row.Observed_Days) <= 0
-    ? 'Source-reported, count days unverified'
-    : current.summary.year === 2024 ? 'Source-reported, repeat audit pending' : 'Source-reported';
+  const matchKey = row => stationKey(row).toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const repeats2023 = row => {
+    if (current.summary.year !== 2024 || !priorYearByKey?.has(matchKey(row))) return false;
+    const value = number(row.ADT_including_motorbikes);
+    return value !== null && value === number(priorYearByKey.get(matchKey(row)).ADT_including_motorbikes);
+  };
+  const status = row => repeats2023(row)
+    ? 'Source-reported; same AADT as 2023; independent 2024 count unverified'
+    : Number(row.Observed_Days) <= 0 ? 'Source-reported; count days unverified'
+      : current.summary.year === 2024 ? 'Source-reported; independent 2024 count unverified' : 'Source-reported';
   const values = rows => rows.map(row => number(row[$('metric').value])).filter(value => value !== null && value >= 0);
   const mean = array => array.length ? array.reduce((sum, n) => sum + n, 0) / array.length : null;
   function setPane(name) {
@@ -73,6 +80,10 @@
     for (const point of points) {
       const line = document.createElement('div'); line.className = 'bar-row';
       const label = document.createElement('span'); label.textContent = String(point.year);
+      if (point.year === 2024 && priorYearByKey?.has(matchKey(point.row))
+        && number(priorYearByKey.get(matchKey(point.row)).ADT_including_motorbikes) === number(point.row.ADT_including_motorbikes)) {
+        line.title = '2024 source AADT exactly matches 2023 for this station. This is not proof of an independent 2024 count.';
+      }
       const track = document.createElement('div'); track.className = 'bar-track';
       const fill = document.createElement('span'); fill.className = 'bar-fill'; fill.style.width = `${Math.max(2, (number(point.row[metric]) || 0) / maximum * 100)}%`; track.append(fill);
       const value = document.createElement('strong'); value.textContent = fmt.format(number(point.row[metric]) || 0);
@@ -216,6 +227,7 @@
   fetch(source).then(response => { if (!response.ok) throw new Error(`Data request returned ${response.status}`); return response.json(); }).then(data => {
     if (!Array.isArray(data.observedYears) || !data.observedYears.every(item => Array.isArray(item.stations) && Number.isInteger(item.summary?.year))) throw new Error('Published station schema is invalid');
     dataset = data;
+    priorYearByKey = new Map(data.observedYears.find(item => item.summary.year === 2023)?.stations.map(row => [matchKey(row), row]) || []);
     for (const item of data.observedYears) $('year').add(new Option(`${item.summary.year} source-reported`, item.summary.year));
     $('year').value = String(data.latestObservedYear);
     const metricKeys = new Set(data.observedYears.flatMap(item => Object.keys(item.stations[0] || {})));
