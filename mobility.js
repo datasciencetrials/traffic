@@ -156,8 +156,9 @@
     const ratio = maximum ? value / maximum : 0;
     return palette[Math.min(palette.length - 1, Math.floor(Math.max(0, ratio) * palette.length))];
   }
-  function pinIcon(colour) {
-    const html = `<span class="pin-art" aria-hidden="true"><svg viewBox="0 0 38 48" width="34" height="43"><path d="M19 2 34 10 34 26 19 45 4 26 4 10Z" fill="#0b476d"/><path d="M19 2 34 10 19 18 4 10Z" fill="${colour}"/><path d="M4 10 19 18 19 45 4 26Z" fill="#167ba2"/><path d="M34 10 19 18 19 45 34 26Z" fill="#0b6089"/><circle cx="19" cy="12" r="4" fill="#fff"/></svg></span>`;
+  function pinIcon(colour, needsReview) {
+    const centre = needsReview ? '#b85d00' : '#137a59', symbol = needsReview ? '!' : '✓';
+    const html = `<span class="pin-art" aria-hidden="true"><svg viewBox="0 0 38 48" width="34" height="43"><path d="M19 2 34 10 34 26 19 45 4 26 4 10Z" fill="#0b476d"/><path d="M19 2 34 10 19 18 4 10Z" fill="${colour}"/><path d="M4 10 19 18 19 45 4 26Z" fill="#167ba2"/><path d="M34 10 19 18 19 45 34 26Z" fill="#0b6089"/><circle cx="19" cy="12" r="6" fill="${centre}" stroke="#fff" stroke-width="1.5"/><text x="19" y="15" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="10">${symbol}</text></svg></span>`;
     return L.divIcon({ className: 'station-pin', html, iconSize: [34, 43], iconAnchor: [17, 42] });
   }
   function renderMap(fit = false) {
@@ -165,12 +166,13 @@
     markers.clearLayers();
     if (!$('show-stations').checked) { $('map-status').textContent = 'Station layer hidden'; return; }
     const metricValues = values(filtered), maximum = Math.max(...metricValues, 1), bounds = [];
-    $('value-legend').textContent = metricValues.length ? 'Point colour shows lower to higher selected values. Marker titles state source status.' : 'No selected measure is supplied for these stations. Grey markers indicate missing values.';
+    $('value-legend').textContent = `${metricValues.length ? 'Point colour shows lower to higher selected values.' : 'No selected measure is supplied. Grey markers indicate missing values.'} Amber ! means verification needed; green check means source-reported. Marker titles state the full status.`;
     for (const row of filtered) {
       const xy = coordinates(row); if (!xy) continue;
       const [lon, lat] = xy;
       const value = number(row[$('metric').value]);
-      const marker = L.marker([lat, lon], { icon: pinIcon(value === null ? '#8798a1' : pinColour(value, maximum)), title: `${stationKey(row)}, ${text(row.Link_Name)}. Selected measure: ${value === null ? 'Not supplied' : fmt.format(value)}. ${status(row)}` });
+      const rowStatus = status(row);
+      const marker = L.marker([lat, lon], { icon: pinIcon(value === null ? '#8798a1' : pinColour(value, maximum), rowStatus !== 'Source-reported'), title: `${stationKey(row)}, ${text(row.Link_Name)}. Selected measure: ${value === null ? 'Not supplied' : fmt.format(value)}. ${rowStatus}` });
       marker.on('click', () => renderDetails(row)); marker.addTo(markers); bounds.push([lat, lon]);
     }
     $('map-status').textContent = `${bounds.length} source-reported station points shown for ${current.summary.year}. ${metricValues.length ? `${metricValues.length} selected values supplied.` : 'Selected measure not supplied.'} Select area uses two map clicks.`;
