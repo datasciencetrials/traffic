@@ -124,23 +124,32 @@
     const body = document.createDocumentFragment(), metric = $('metric').value;
     $('measure-heading').textContent = dataset.metricDefinitions.find(item => item.key === metric)?.label || 'Selected measure';
     const range = values(filtered), min = Math.min(...range), max = Math.max(...range);
+    const aadtValues = filtered.map(row => number(row.ADT_including_motorbikes)).filter(value => value !== null && value >= 0);
+    const aadtMin = Math.min(...aadtValues), aadtMax = Math.max(...aadtValues);
+    const shade = (cell, value, lower, upper) => {
+      if (value === null || !Number.isFinite(lower) || !Number.isFinite(upper)) return;
+      const ratio = upper === lower ? 0.5 : Math.max(0, Math.min(1, (value - lower) / (upper - lower)));
+      cell.classList.add('value-cell');
+      cell.style.backgroundColor = `rgba(36,151,181,${(.06 + ratio * .22).toFixed(3)})`;
+      cell.title = 'Relative magnitude within the current filtered station set';
+    };
     for (const row of filtered) {
       const tr = document.createElement('tr'); tr.tabIndex = 0;
-      const fields = [stationKey(row), text(row.Link_Name), regionName(row.Region), surfaceName(row.Surface_Type), fmt.format(number(row.ADT_including_motorbikes) || 0), fmt.format(number(row[metric]) || 0)];
+      const aadt = number(row.ADT_including_motorbikes), magnitude = number(row[metric]);
+      const surface = surfaceName(row.Surface_Type);
+      const fields = [stationKey(row), text(row.Link_Name), regionName(row.Region), surface, aadt === null ? 'Not supplied' : fmt.format(aadt), magnitude === null ? 'Not supplied' : fmt.format(magnitude)];
       for (const value of fields) { const td = document.createElement('td'); td.textContent = value; tr.append(td); }
-      const magnitude = number(row[metric]);
-      if (magnitude !== null && Number.isFinite(min) && Number.isFinite(max)) {
-        const ratio = max === min ? 0.5 : Math.max(0, Math.min(1, (magnitude - min) / (max - min)));
-        tr.children[5].className = 'value-cell'; tr.children[5].style.backgroundColor = `rgba(36,151,181,${(.06 + ratio * .22).toFixed(3)})`;
-        tr.children[5].title = 'Relative magnitude within the current filtered station set';
-      }
+      const surfacePill = document.createElement('span'); surfacePill.className = `surface-pill ${surface.toLowerCase().replace(' ', '-')}`; surfacePill.textContent = surface;
+      tr.children[3].replaceChildren(surfacePill);
+      shade(tr.children[4], aadt, aadtMin, aadtMax);
+      shade(tr.children[5], magnitude, min, max);
       const td = document.createElement('td'), pill = document.createElement('span'); pill.className = `status-pill ${Number(row.Observed_Days) <= 0 || current.summary.year === 2024 ? 'unverified' : 'reported'}`; pill.textContent = status(row); td.append(pill); tr.append(td);
       tr.addEventListener('click', () => { renderDetails(row); const xy = coordinates(row); if (map && xy) map.setView([xy[1], xy[0]], Math.max(map.getZoom(), 9)); });
       tr.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); tr.click(); } });
       body.append(tr);
     }
     $('station-rows').replaceChildren(body);
-    $('table-note').textContent = `${fmt.format(filtered.length)} matching station records. AADT is a station value, not a network total.`;
+    $('table-note').textContent = `${fmt.format(filtered.length)} matching station records. AADT is a station value, not a network total. Blue cell shading compares values within the filtered rows; surface and status labels show categories. Colours are not engineering thresholds.`;
   }
   function pinColour(value, maximum) {
     const ratio = maximum ? value / maximum : 0;
