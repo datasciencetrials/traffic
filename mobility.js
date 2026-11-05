@@ -9,7 +9,7 @@
   const decodedLink = value => text(value).replaceAll('_', ' ').replace(/\bLink(\d+)\b/gi, 'Link $1');
   const regionName = value => ({ North: 'Northern', South: 'Southern', East: 'Eastern', West: 'Western' })[value] || text(value);
   const surfaceName = value => /bituminous|concrete|paved/i.test(text(value)) ? 'Paved' : /gravel|earth|unpaved/i.test(text(value)) ? 'Unpaved' : 'Not supplied';
-  const number = value => Number.isFinite(Number(value)) ? Number(value) : null;
+  const number = value => value === null || value === undefined || String(value).trim() === '' ? null : Number.isFinite(Number(value)) ? Number(value) : null;
   const coordinates = row => {
     const first = number(row.Latitude), second = number(row.Longitude);
     if (first >= 29 && first <= 36 && second >= -2 && second <= 5) return [first, second];
@@ -64,7 +64,8 @@
     selected = row;
     const target = $('station-details'); target.replaceChildren();
     if (!row) { target.textContent = 'Select a station on the map or in the table.'; return; }
-    const entries = [['Station', stationKey(row)], ['Road', text(row.Link_Name)], ['Road link', decodedLink(row.Link_ID)], ['Sub-region', regionName(row.Region)], ['Surface', surfaceName(row.Surface_Type)], ['Source year', current.summary.year], ['AADT', fmt.format(number(row.ADT_including_motorbikes) || 0)], ['Selected measure', fmt.format(number(row[$('metric').value]) || 0)], ['Status', status(row)]];
+    const formatValue = value => value === null ? 'Not supplied' : fmt.format(value);
+    const entries = [['Station', stationKey(row)], ['Road', text(row.Link_Name)], ['Road link', decodedLink(row.Link_ID)], ['Sub-region', regionName(row.Region)], ['Surface', surfaceName(row.Surface_Type)], ['Source year', current.summary.year], ['AADT', formatValue(number(row.ADT_including_motorbikes))], ['Selected measure', formatValue(number(row[$('metric').value]))], ['Status', status(row)]];
     const list = document.createElement('dl'); list.className = 'details-list';
     for (const [label, value] of entries) { const dt = document.createElement('dt'), dd = document.createElement('dd'); dt.textContent = label; dd.textContent = value; list.append(dt, dd); }
     target.append(list); setPane('details'); renderSeries();
@@ -163,14 +164,16 @@
     if (!map) return;
     markers.clearLayers();
     if (!$('show-stations').checked) { $('map-status').textContent = 'Station layer hidden'; return; }
-    const maximum = Math.max(...values(filtered), 1), bounds = [];
+    const metricValues = values(filtered), maximum = Math.max(...metricValues, 1), bounds = [];
+    $('value-legend').textContent = metricValues.length ? 'Point colour shows lower to higher selected values. Marker titles state source status.' : 'No selected measure is supplied for these stations. Grey markers indicate missing values.';
     for (const row of filtered) {
       const xy = coordinates(row); if (!xy) continue;
       const [lon, lat] = xy;
-      const marker = L.marker([lat, lon], { icon: pinIcon(pinColour(number(row[$('metric').value]) || 0, maximum)), title: `${stationKey(row)}, ${text(row.Link_Name)}` });
+      const value = number(row[$('metric').value]);
+      const marker = L.marker([lat, lon], { icon: pinIcon(value === null ? '#8798a1' : pinColour(value, maximum)), title: `${stationKey(row)}, ${text(row.Link_Name)}. Selected measure: ${value === null ? 'Not supplied' : fmt.format(value)}. ${status(row)}` });
       marker.on('click', () => renderDetails(row)); marker.addTo(markers); bounds.push([lat, lon]);
     }
-    $('map-status').textContent = `${bounds.length} source-reported station points shown for ${current.summary.year}. Select area uses two map clicks.`;
+    $('map-status').textContent = `${bounds.length} source-reported station points shown for ${current.summary.year}. ${metricValues.length ? `${metricValues.length} selected values supplied.` : 'Selected measure not supplied.'} Select area uses two map clicks.`;
     if (fit && bounds.length) map.fitBounds(bounds, { padding: [22, 22], maxZoom: 9 });
   }
   function render(fit = false) {
