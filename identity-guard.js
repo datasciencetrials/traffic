@@ -9,6 +9,7 @@
     ['LIVE', 'Not live traffic'],
     ['LIVE - projected to', 'Modelled projection to '],
     ['Traffic Delay (ADT)', 'Traffic volume (AADT)'],
+    ['Uganda National Roads · Department of National Roads', ''],
     ['Sys_T / ATC Station Directory', 'Traffic station directory'],
     ['monitoring stations · Sys_T manual counts +', ' monitoring stations; manual counts and '],
     ['ATC permanent counters · source: Sys_T 2025 AADT analysis', ' permanent counters; 2025 source-reported values'],
