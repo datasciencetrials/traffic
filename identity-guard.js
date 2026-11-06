@@ -6,6 +6,8 @@
     ['Uganda Sys_T', 'Data Science Trials Traffic'],
     ['Agency · Data Division · Sys_I', 'Personal learning site, not an official Ministry product'],
     ['System Online', 'Published data view'],
+    ['LIVE', 'Not live traffic'],
+    ['Traffic Delay (ADT)', 'Traffic volume (AADT)'],
   ]);
   const root = document.getElementById('root');
   if (!root) return;
