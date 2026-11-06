@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="mobility.css?v=20261105">
   <style>.surface-pill{display:inline-block;padding:4px 7px;border-radius:20px}.surface-pill.paved{background:#e0f3ed;color:#125f49}.surface-pill.unpaved{background:#fff0d9;color:#784d08}.surface-pill.not-supplied{background:#e8edf1;color:#445964}</style>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
-  <script src="mobility.js?v=20261106-surface-categories" defer></script>
+  <script src="mobility.js?v=20261106-map-controls" defer></script>
 </head>
 <body>
   <a class="skip" href="#workspace">Skip to workspace</a>
@@ -25,7 +25,7 @@
       <label>Sub-region <select id="region"><option value="">All sub-regions</option></select></label>
       <label>Surface type <select id="surface"><option value="">All surfaces</option></select></label>
       <label>Find station or road <input id="search" type="search" placeholder="Station, road or link" autocomplete="off"></label>
-      <button id="reset" type="button">Reset</button>
+      <button id="reset" type="button">Reset all</button>
     </section>
     <section class="summary" aria-label="Filtered results"><div><span>Mapped stations</span><strong id="station-count">...</strong></div><div><span>Mean station AADT</span><strong id="mean-aadt">...</strong></div><div><span>Mean selected measure</span><strong id="measure-total">...</strong></div><div><span>Coverage</span><strong id="coverage">Source-reported subset</strong></div></section>
     <p class="method" id="method">These are source-reported station values, not live traffic. Each year has a different observed station population. The 2024 workbook repeats earlier AADT values at many stations; independent 2024 measurements are not verified for those records. Source coordinate fields are reversed for these records; the map uses the Uganda-bound-checked X and Y order.</p>

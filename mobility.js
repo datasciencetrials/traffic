@@ -162,7 +162,7 @@
     return L.divIcon({ className: 'station-pin', html, iconSize: [34, 43], iconAnchor: [17, 42] });
   }
   function renderMap(fit = false) {
-    if (!map) return;
+    if (!map || !current) return;
     markers.clearLayers();
     if (!$('show-stations').checked) { $('map-status').textContent = 'Station layer hidden'; return; }
     const metricValues = values(filtered), maximum = Math.max(...metricValues, 1), bounds = [];
@@ -198,7 +198,7 @@
     for (const name of regions) $('region').add(new Option(name, name));
     $('surface').replaceChildren(new Option('All surfaces', ''));
     for (const name of [...new Set(current.stations.map(row => surfaceName(row.Surface_Type)))].sort()) $('surface').add(new Option(name, name));
-    $('search').value = ''; areaBounds = null; areaStart = null; if (area) { area.remove(); area = null; }
+    $('search').value = ''; areaBounds = null; areaStart = null; $('draw-area').setAttribute('aria-pressed', 'false'); if (area) { area.remove(); area = null; }
     render(true);
   }
   function initMap() {
@@ -220,13 +220,13 @@
     document.querySelectorAll('[data-base]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   }));
   $('draw-area').addEventListener('click', event => { const pressed = event.currentTarget.getAttribute('aria-pressed') === 'true'; event.currentTarget.setAttribute('aria-pressed', String(!pressed)); areaStart = null; $('map-status').textContent = pressed ? 'Area selection cancelled.' : 'Select two corners on the map.'; });
-  $('clear-area').addEventListener('click', () => { areaBounds = null; areaStart = null; if (area) { area.remove(); area = null; } render(); });
+  $('clear-area').addEventListener('click', () => { areaBounds = null; areaStart = null; $('draw-area').setAttribute('aria-pressed', 'false'); if (area) { area.remove(); area = null; } render(); });
   $('fit').addEventListener('click', () => renderMap(true));
   $('catalogue-stations').addEventListener('click', () => setPane('contents'));
   $('show-stations').addEventListener('change', () => renderMap());
   for (const id of ['metric', 'region', 'surface', 'search']) $(id).addEventListener(id === 'search' ? 'input' : 'change', () => render());
   $('year').addEventListener('change', changeYear);
-  $('reset').addEventListener('click', () => { $('metric').value = 'ADT_including_motorbikes'; changeYear(); });
+  $('reset').addEventListener('click', () => { if (!dataset) return; $('year').value = String(dataset.latestObservedYear); $('metric').value = 'ADT_including_motorbikes'; changeYear(); });
   $('export-csv').addEventListener('click', () => {
     if (!filtered.length) return;
     const records = filtered.map(publicRecord), headers = Object.keys(records[0]);
