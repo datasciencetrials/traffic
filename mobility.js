@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const fmt = new Intl.NumberFormat('en-UG', { maximumFractionDigits: 0 });
+  const fmt = new Intl.NumberFormat('en-UG', { maximumFractionDigits: 2 });
   const source = 'data/traffic_dashboard_data.json';
   let dataset, current, filtered = [], selected, map, markers, tiles, area, areaStart, areaBounds, priorYearRows;
   const palette = ['#64c0cf', '#319db9', '#147ba6', '#075d92'];
@@ -160,7 +160,7 @@
       body.append(tr);
     }
     $('station-rows').replaceChildren(body);
-    $('table-note').textContent = `${fmt.format(filtered.length)} matching station records. AADT is a station value, not a network total. Blue cell shading compares values within the filtered rows; surface and status labels show categories. Colours are not engineering thresholds.`;
+    $('table-note').textContent = `${fmt.format(filtered.length)} matching station records. Station values retain up to two source decimals; AADT is not a network total. Blue cell shading compares values within the filtered rows; surface and status labels show categories. Colours are not engineering thresholds.`;
   }
   function pinColour(value, maximum) {
     const ratio = maximum ? value / maximum : 0;
