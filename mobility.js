@@ -8,7 +8,7 @@
   const text = value => value === null || value === undefined || String(value).trim() === '' ? 'Not supplied' : String(value).trim();
   const decodedLink = value => text(value).replaceAll('_', ' ').replace(/\bLink(\d+)\b/gi, 'Link $1');
   const regionName = value => ({ North: 'Northern', South: 'Southern', East: 'Eastern', West: 'Western' })[value] || text(value);
-  const surfaceName = value => /bituminous|concrete|paved/i.test(text(value)) ? 'Paved' : /gravel|earth|unpaved/i.test(text(value)) ? 'Unpaved' : 'Not supplied';
+  const surfaceName = value => /unsealed|unpaved|gravel|earth/i.test(text(value)) ? 'Unpaved' : /bituminous|concrete|paved/i.test(text(value)) ? 'Paved' : 'Not supplied';
   const number = value => value === null || value === undefined || String(value).trim() === '' ? null : Number.isFinite(Number(value)) ? Number(value) : null;
   const coordinates = row => {
     const first = number(row.Latitude), second = number(row.Longitude);
