@@ -105,14 +105,14 @@
     const target = $('region-bars'); target.replaceChildren();
     const groups = new Map();
     for (const row of filtered) { const name = regionName(row.Region); if (!groups.has(name)) groups.set(name, []); groups.get(name).push(row); }
-    const entries = [...groups].map(([name, rows]) => [name, mean(values(rows)) || 0, rows.length]).sort((a, b) => b[1] - a[1]);
-    const maximum = Math.max(...entries.map(item => item[1]), 1);
+    const entries = [...groups].map(([name, rows]) => [name, mean(values(rows)), rows.length]).sort((a, b) => (b[1] ?? -1) - (a[1] ?? -1));
+    const maximum = Math.max(...entries.map(item => item[1] ?? 0), 1);
     for (const [name, average, count] of entries) {
       const line = document.createElement('div'); line.className = 'bar-row'; line.title = `${count} mapped stations`;
       const label = document.createElement('span'); label.textContent = name;
       const track = document.createElement('div'); track.className = 'bar-track';
-      const fill = document.createElement('span'); fill.className = 'bar-fill'; fill.style.width = `${Math.max(2, average / maximum * 100)}%`; track.append(fill);
-      const value = document.createElement('strong'); value.textContent = fmt.format(average);
+      if (average !== null) { const fill = document.createElement('span'); fill.className = 'bar-fill'; fill.style.width = `${Math.max(2, average / maximum * 100)}%`; track.append(fill); }
+      const value = document.createElement('strong'); value.textContent = average === null ? 'Not supplied' : fmt.format(average);
       line.append(label, track, value); target.append(line);
     }
     if (!entries.length) target.textContent = 'No stations match these filters.';
