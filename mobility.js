@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const fmt = new Intl.NumberFormat('en-UG', { maximumFractionDigits: 0 });
   const source = 'data/traffic_dashboard_data.json';
-  let dataset, current, filtered = [], selected, map, markers, tiles, area, areaStart, areaBounds, priorYearByKey;
+  let dataset, current, filtered = [], selected, map, markers, tiles, area, areaStart, areaBounds, priorYearRows;
   const palette = ['#64c0cf', '#319db9', '#147ba6', '#075d92'];
   const text = value => value === null || value === undefined || String(value).trim() === '' ? 'Not supplied' : String(value).trim();
   const decodedLink = value => text(value).replaceAll('_', ' ').replace(/\bLink(\d+)\b/gi, 'Link $1');
@@ -18,11 +18,22 @@
   };
   const stationKey = row => text(row.Section_ID) !== 'Not supplied' ? decodedLink(row.Section_ID) : decodedLink(row.Link_ID);
   const matchKey = row => stationKey(row).toUpperCase().replace(/[^A-Z0-9]/g, '');
-  const repeats2023 = row => {
-    if (current.summary.year !== 2024 || !priorYearByKey?.has(matchKey(row))) return false;
-    const value = number(row.ADT_including_motorbikes);
-    return value !== null && value === number(priorYearByKey.get(matchKey(row)).ADT_including_motorbikes);
+  const linkKey = row => decodedLink(row.Link_ID).toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const matchingStation = (rows, row) => {
+    if (!rows) return null;
+    const sameLink = candidate => linkKey(candidate) === linkKey(row);
+    const exact = rows.filter(candidate => stationKey(candidate) === stationKey(row) && sameLink(candidate));
+    if (exact.length === 1) return exact[0];
+    const normalised = rows.filter(candidate => matchKey(candidate) === matchKey(row) && sameLink(candidate));
+    return normalised.length === 1 ? normalised[0] : null;
   };
+  const repeatsAgainst2023 = row => {
+    const prior = matchingStation(priorYearRows, row);
+    if (!prior) return false;
+    const value = number(row.ADT_including_motorbikes);
+    return value !== null && value === number(prior.ADT_including_motorbikes);
+  };
+  const repeats2023 = row => current.summary.year === 2024 && repeatsAgainst2023(row);
   const status = row => repeats2023(row)
     ? 'Source-reported; same AADT as 2023; independent 2024 count unverified'
     : Number(row.Observed_Days) <= 0 ? 'Source-reported; count days unverified'
@@ -74,15 +85,14 @@
     const target = $('station-series'); target.replaceChildren();
     if (!selected) { target.textContent = 'Select a station.'; target.className = 'chart-empty'; return; }
     target.className = '';
-    const key = stationKey(selected), metric = $('metric').value;
-    const points = dataset.observedYears.map(year => ({ year: year.summary.year, row: year.stations.find(row => stationKey(row) === key) })).filter(item => item.row && number(item.row[metric]) !== null);
+    const metric = $('metric').value;
+    const points = dataset.observedYears.map(year => ({ year: year.summary.year, row: matchingStation(year.stations, selected) })).filter(item => item.row && number(item.row[metric]) !== null);
     if (!points.length) { target.textContent = 'No reported values for this station.'; return; }
     const maximum = Math.max(...points.map(item => number(item.row[metric]) || 0), 1);
     for (const point of points) {
       const line = document.createElement('div'); line.className = 'bar-row';
       const label = document.createElement('span'); label.textContent = String(point.year);
-      if (point.year === 2024 && priorYearByKey?.has(matchKey(point.row))
-        && number(priorYearByKey.get(matchKey(point.row)).ADT_including_motorbikes) === number(point.row.ADT_including_motorbikes)) {
+      if (point.year === 2024 && repeatsAgainst2023(point.row)) {
         line.title = '2024 source AADT exactly matches 2023 for this station. This is not proof of an independent 2024 count.';
       }
       const track = document.createElement('div'); track.className = 'bar-track';
@@ -241,7 +251,7 @@
   fetch(source).then(response => { if (!response.ok) throw new Error(`Data request returned ${response.status}`); return response.json(); }).then(data => {
     if (!Array.isArray(data.observedYears) || !data.observedYears.every(item => Array.isArray(item.stations) && Number.isInteger(item.summary?.year))) throw new Error('Published station schema is invalid');
     dataset = data;
-    priorYearByKey = new Map(data.observedYears.find(item => item.summary.year === 2023)?.stations.map(row => [matchKey(row), row]) || []);
+    priorYearRows = data.observedYears.find(item => item.summary.year === 2023)?.stations || [];
     for (const item of data.observedYears) $('year').add(new Option(`${item.summary.year} source-reported`, item.summary.year));
     $('year').value = String(data.latestObservedYear);
     const metricKeys = new Set(data.observedYears.flatMap(item => Object.keys(item.stations[0] || {})));
