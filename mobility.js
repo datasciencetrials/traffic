@@ -71,15 +71,15 @@
       'Latitude (Y)': xy?.[1] ?? null,
     };
   }
-  function renderDetails(row) {
+  function renderDetails(row, showPane = true) {
     selected = row;
     const target = $('station-details'); target.replaceChildren();
-    if (!row) { target.textContent = 'Select a station on the map or in the table.'; return; }
+    if (!row) { target.textContent = 'Select a station on the map or in the table.'; renderSeries(); return; }
     const formatValue = value => value === null ? 'Not supplied' : fmt.format(value);
     const entries = [['Station', stationKey(row)], ['Road', text(row.Link_Name)], ['Road link', decodedLink(row.Link_ID)], ['Sub-region', regionName(row.Region)], ['Surface', surfaceName(row.Surface_Type)], ['Source year', current.summary.year], ['AADT', formatValue(number(row.ADT_including_motorbikes))], ['Selected measure', formatValue(number(row[$('metric').value]))], ['Status', status(row)]];
     const list = document.createElement('dl'); list.className = 'details-list';
     for (const [label, value] of entries) { const dt = document.createElement('dt'), dd = document.createElement('dd'); dt.textContent = label; dd.textContent = value; list.append(dt, dd); }
-    target.append(list); setPane('details'); renderSeries();
+    target.append(list); if (showPane) setPane('details'); renderSeries();
   }
   function renderSeries() {
     const target = $('station-series'); target.replaceChildren();
@@ -198,11 +198,14 @@
     const metricMean = mean(values(filtered)); $('measure-total').textContent = metricMean === null ? 'Not supplied' : fmt.format(metricMean);
     $('catalogue-count').textContent = `${fmt.format(current.stations.length)} records`;
     $('data-status').textContent = `${current.summary.year} source-reported station data. ${fmt.format(current.stations.length)} records available.`;
-    renderRows(); renderRegions(); renderMonthly(); renderMap(fit); renderSeries();
+    renderRows(); renderRegions(); renderMonthly(); renderMap(fit);
+    if (selected && !filtered.includes(selected)) renderDetails(null, false);
+    else if (selected) renderDetails(selected, false);
+    else renderSeries();
   }
   function changeYear() {
     current = dataset.observedYears.find(item => String(item.summary.year) === $('year').value);
-    selected = null; renderDetails(null);
+    selected = null; renderDetails(null, false);
     const regions = [...new Set(current.stations.map(row => regionName(row.Region)))].sort();
     $('region').replaceChildren(new Option('All sub-regions', ''));
     for (const name of regions) $('region').add(new Option(name, name));
