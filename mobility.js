@@ -44,6 +44,18 @@
     document.querySelectorAll('[data-panel]').forEach(panel => { panel.hidden = panel.dataset.panel !== name; });
     document.querySelectorAll('[data-pane]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.pane === name)));
   }
+  function setView(name, focus = false) {
+    const tabs = [...document.querySelectorAll('[data-view]')];
+    if (!tabs.some(tab => tab.dataset.view === name)) return;
+    for (const tab of tabs) {
+      const active = tab.dataset.view === name;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      $(tab.getAttribute('aria-controls')).hidden = !active;
+      if (active && focus) tab.focus();
+    }
+    if (name === 'map' && map) requestAnimationFrame(() => map.invalidateSize());
+  }
   function download(content, filename, type) {
     const url = URL.createObjectURL(new Blob([content], { type }));
     const link = document.createElement('a'); link.href = url; link.download = filename; link.click();
@@ -155,7 +167,7 @@
       shade(tr.children[4], aadt, aadtMin, aadtMax);
       shade(tr.children[5], magnitude, min, max);
       const td = document.createElement('td'), pill = document.createElement('span'); pill.className = `status-pill ${Number(row.Observed_Days) <= 0 || current.summary.year === 2024 ? 'unverified' : 'reported'}`; pill.textContent = status(row); td.append(pill); tr.append(td);
-      tr.addEventListener('click', () => { renderDetails(row); const xy = coordinates(row); if (map && xy) map.setView([xy[1], xy[0]], Math.max(map.getZoom(), 9)); });
+      tr.addEventListener('click', () => { renderDetails(row); setView('map'); const xy = coordinates(row); if (map && xy) map.setView([xy[1], xy[0]], Math.max(map.getZoom(), 9)); });
       tr.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); tr.click(); } });
       body.append(tr);
     }
@@ -228,6 +240,17 @@
     });
   }
   document.querySelectorAll('[data-pane]').forEach(button => button.addEventListener('click', () => setPane(button.dataset.pane)));
+  document.querySelectorAll('[data-view]').forEach(button => {
+    button.addEventListener('click', () => setView(button.dataset.view));
+    button.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const tabs = [...document.querySelectorAll('[data-view]')];
+      const index = tabs.indexOf(button);
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      setView(tabs[next].dataset.view, true);
+    });
+  });
   document.querySelectorAll('[data-base]').forEach(button => button.addEventListener('click', () => {
     const plain = button.dataset.base === 'plain'; $('map').classList.toggle('plain', plain);
     document.querySelectorAll('[data-base]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
