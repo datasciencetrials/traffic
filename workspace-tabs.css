@@ -8,8 +8,16 @@
 .workspace-tabs + section { border-top-left-radius: 0; }
 .analysis, .table-section { margin-top: 0; }
 .analysis-wide { grid-column: 1 / -1; }
+.share-link-row { grid-column: 1 / -1; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: center; padding-top: 3px; }
+.share-link-row label { font-size: 12px; letter-spacing: 0; text-transform: none; }
+.share-link-row input { min-width: 0; width: 100%; margin: 0; border: 1px solid #b8d2df; border-radius: 7px; padding: 8px; color: #18303d; background: #f5f9fc; }
+.share-link-row span { font-size: 12px; color: #15546a; }
+@media (min-width: 951px) {
+  .controls { grid-template-columns: repeat(5, minmax(110px, 1fr)) auto auto; }
+}
 @media (max-width: 620px) {
   .workspace-tabs { margin-top: 6px; }
   .workspace-tabs button { min-width: 116px; padding: 11px 12px 13px; font-size: 14px; }
   .workspace-tabs button span { font-size: 10px; }
+  .share-link-row { grid-template-columns: 1fr; }
 }

@@ -55,6 +55,37 @@
       if (active && focus) tab.focus();
     }
     if (name === 'map' && map) requestAnimationFrame(() => map.invalidateSize());
+    refreshShareLink();
+  }
+  function shareUrl() {
+    const url = new URL(window.location.pathname, window.location.origin);
+    const params = url.searchParams;
+    if ($('year').value && $('year').value !== String(dataset.latestObservedYear)) params.set('year', $('year').value);
+    if ($('metric').selectedIndex > 0) params.set('measure', String($('metric').selectedIndex));
+    if ($('region').value) params.set('region', $('region').value);
+    if ($('surface').value) params.set('surface', $('surface').value);
+    if ($('search').value.trim()) params.set('q', $('search').value.trim());
+    const view = document.querySelector('[data-view][aria-selected="true"]')?.dataset.view;
+    if (view && view !== 'map') params.set('view', view);
+    return url.toString();
+  }
+  function refreshShareLink() {
+    if (dataset && !$('share-link-row').hidden) $('share-link').value = shareUrl();
+  }
+  function restoreSharedView() {
+    const params = new URLSearchParams(window.location.search);
+    const year = params.get('year');
+    if (year && [...$('year').options].some(option => option.value === year)) $('year').value = year;
+    changeYear();
+    const measure = params.get('measure');
+    if (measure && /^\d+$/.test(measure) && Number(measure) < $('metric').options.length) $('metric').selectedIndex = Number(measure);
+    for (const [key, id] of [['region', 'region'], ['surface', 'surface']]) {
+      const value = params.get(key);
+      if (value && [...$(id).options].some(option => option.value === value)) $(id).value = value;
+    }
+    $('search').value = (params.get('q') || '').slice(0, 80);
+    render();
+    setView(params.get('view') || 'map');
   }
   function download(content, filename, type) {
     const url = URL.createObjectURL(new Blob([content], { type }));
@@ -211,6 +242,7 @@
     $('catalogue-count').textContent = `${fmt.format(current.stations.length)} records`;
     $('data-status').textContent = `${current.summary.year} source-reported station data. ${fmt.format(current.stations.length)} records available.`;
     renderRows(); renderRegions(); renderMonthly(); renderMap(fit);
+    refreshShareLink();
     if (selected && !filtered.includes(selected)) renderDetails(null, false);
     else if (selected) renderDetails(selected, false);
     else renderSeries();
@@ -263,6 +295,17 @@
   for (const id of ['metric', 'region', 'surface', 'search']) $(id).addEventListener(id === 'search' ? 'input' : 'change', () => render());
   $('year').addEventListener('change', changeYear);
   $('reset').addEventListener('click', () => { if (!dataset) return; $('year').value = String(dataset.latestObservedYear); $('metric').value = 'ADT_including_motorbikes'; changeYear(); });
+  $('share-view').addEventListener('click', async () => {
+    if (!dataset) return;
+    $('share-link-row').hidden = false;
+    refreshShareLink();
+    $('share-link').focus(); $('share-link').select();
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText($('share-link').value);
+      $('share-status').textContent = 'Link copied';
+    } catch (_) { $('share-status').textContent = 'Select and copy the link'; }
+  });
   $('export-csv').addEventListener('click', () => {
     if (!filtered.length) return;
     const records = filtered.map(publicRecord), headers = Object.keys(records[0]);
@@ -282,6 +325,6 @@
     $('year').value = String(data.latestObservedYear);
     const metricKeys = new Set(data.observedYears.flatMap(item => Object.keys(item.stations[0] || {})));
     for (const item of data.metricDefinitions.filter(item => metricKeys.has(item.key))) $('metric').add(new Option(item.label, item.key));
-    $('metric').value = 'ADT_including_motorbikes'; changeYear();
+    $('metric').value = 'ADT_including_motorbikes'; restoreSharedView();
   }).catch(error => { $('data-status').textContent = 'Published station data unavailable'; $('map-status').textContent = 'Data could not be loaded. Please try again later.'; console.error('Traffic mobility data unavailable', error); });
 })();
