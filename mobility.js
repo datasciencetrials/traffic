@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const fmt = new Intl.NumberFormat('en-UG', { maximumFractionDigits: 2 });
   const source = 'data/traffic_dashboard_data.json';
-  let dataset, current, filtered = [], selected, map, markers, tiles, area, areaStart, areaBounds, priorYearRows;
+  let dataset, current, filtered = [], classProfile = [], selected, map, markers, tiles, area, areaStart, areaBounds, priorYearRows;
   const palette = ['#64c0cf', '#319db9', '#147ba6', '#075d92'];
   const text = value => value === null || value === undefined || String(value).trim() === '' ? 'Not supplied' : String(value).trim();
   const decodedLink = value => text(value).replaceAll('_', ' ').replace(/\bLink(\d+)\b/gi, 'Link $1');
@@ -53,6 +53,11 @@
       tab.tabIndex = active ? 0 : -1;
       $(tab.getAttribute('aria-controls')).hidden = !active;
       if (active && focus) tab.focus();
+    }
+    const activeTab = tabs.find(tab => tab.dataset.view === name);
+    const tablist = activeTab?.parentElement;
+    if (tablist && tablist.scrollWidth > tablist.clientWidth) {
+      tablist.scrollLeft = activeTab.offsetLeft - tablist.offsetLeft - (tablist.clientWidth - activeTab.offsetWidth) / 2;
     }
     if (name === 'map' && map) requestAnimationFrame(() => map.invalidateSize());
     refreshShareLink();
@@ -208,6 +213,29 @@
       measureTarget.append(coverageRow(item.label, supplied, filtered.length, supplied === 0 ? 'missing' : ''));
     }
   }
+  function renderClasses() {
+    const target = $('class-profile'); target.replaceChildren();
+    classProfile = dataset.classOrder.map(label => {
+      const supplied = filtered.map(row => number(row[label])).filter(value => value !== null && value >= 0);
+      return { label, mean: mean(supplied), supplied: supplied.length };
+    });
+    const maximum = Math.max(...classProfile.map(item => item.mean ?? 0), 1);
+    for (const item of classProfile) {
+      const row = document.createElement('div'); row.className = 'class-row';
+      const label = document.createElement('span'); label.textContent = item.label;
+      const track = document.createElement('div'); track.className = 'class-track';
+      if (item.mean !== null && item.mean > 0) {
+        const fill = document.createElement('span'); fill.className = 'class-fill';
+        fill.style.width = `${Math.max(2, Math.min(100, item.mean / maximum * 100))}%`;
+        track.append(fill);
+      }
+      const value = document.createElement('strong'); value.textContent = item.mean === null ? 'Not supplied' : fmt.format(item.mean);
+      const coverage = document.createElement('small'); coverage.textContent = `${fmt.format(item.supplied)} of ${fmt.format(filtered.length)} stations supplied`;
+      row.append(label, track, value, coverage); target.append(row);
+    }
+    $('classes-status').textContent = `${current.summary.year} source-reported class values for ${fmt.format(filtered.length)} matching station records. Each mean uses only stations with that class supplied; the bars do not represent a network total. ${current.summary.year === 2024 ? 'Independent 2024 counts remain unverified.' : ''}`;
+    $('export-classes').disabled = !filtered.length;
+  }
   function renderRows() {
     const body = document.createDocumentFragment(), metric = $('metric').value;
     $('measure-heading').textContent = dataset.metricDefinitions.find(item => item.key === metric)?.label || 'Selected measure';
@@ -298,7 +326,7 @@
     const metricMean = mean(values(filtered)); $('measure-total').textContent = metricMean === null ? 'Not supplied' : fmt.format(metricMean);
     $('catalogue-count').textContent = `${fmt.format(current.stations.length)} records`;
     $('data-status').textContent = `${current.summary.year} source-reported station data. ${fmt.format(current.stations.length)} records available.`;
-    renderRows(); renderRegions(); renderMonthly(); renderCoverage(); renderMap(fit);
+    renderRows(); renderRegions(); renderMonthly(); renderCoverage(); renderClasses(); renderMap(fit);
     refreshShareLink();
     if (selected && !filtered.includes(selected)) renderDetails(null, false);
     else if (selected) renderDetails(selected, false);
@@ -373,6 +401,11 @@
   $('export-geojson').addEventListener('click', () => {
     const features = filtered.filter(row => coordinates(row)).map(row => ({ type: 'Feature', geometry: { type: 'Point', coordinates: coordinates(row) }, properties: publicRecord(row) }));
     download(JSON.stringify({ type: 'FeatureCollection', features }), `traffic-stations-${current.summary.year}.geojson`, 'application/geo+json');
+  });
+  $('export-classes').addEventListener('click', () => {
+    if (!filtered.length) return;
+    const rows = [['Source year', 'Vehicle class', 'Mean station daily value', 'Stations supplied', 'Filtered stations'], ...classProfile.map(item => [current.summary.year, item.label, item.mean === null ? '' : Number(item.mean.toFixed(2)), item.supplied, filtered.length])];
+    download('\uFEFF' + rows.map(row => row.map(csvCell).join(',')).join('\r\n'), `traffic-vehicle-classes-${current.summary.year}.csv`, 'text/csv;charset=utf-8');
   });
   initMap();
   fetch(source).then(response => { if (!response.ok) throw new Error(`Data request returned ${response.status}`); return response.json(); }).then(data => {
