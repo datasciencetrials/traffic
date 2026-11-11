@@ -174,6 +174,40 @@
     }
     if (!months.length) target.textContent = 'No monthly survey coverage supplied.';
   }
+  function coverageRow(label, count, total, kind = '', showRatio = true) {
+    const row = document.createElement('div'); row.className = 'coverage-row';
+    const name = document.createElement('span'); name.textContent = label;
+    const track = document.createElement('div'); track.className = 'coverage-track';
+    if (count > 0 && total > 0) {
+      const fill = document.createElement('span'); fill.className = `coverage-fill ${kind}`;
+      fill.style.width = `${Math.max(2, Math.min(100, count / total * 100))}%`;
+      track.append(fill);
+    }
+    const value = document.createElement('strong');
+    value.textContent = !showRatio ? `${fmt.format(count)} records` : total === 0 ? 'No matching records' : `${fmt.format(count)} of ${fmt.format(total)} (${Math.round(count / total * 100)}%)`;
+    row.append(name, track, value);
+    return row;
+  }
+  function renderCoverage() {
+    const yearTarget = $('year-coverage'), surfaceTarget = $('surface-coverage'), measureTarget = $('measure-coverage');
+    yearTarget.replaceChildren(); surfaceTarget.replaceChildren(); measureTarget.replaceChildren();
+    const years = dataset.observedYears;
+    const largestYear = Math.max(...years.map(item => item.stations.length), 1);
+    for (const item of years) yearTarget.append(coverageRow(String(item.summary.year), item.stations.length, largestYear, '', false));
+    const surfaceCounts = new Map();
+    for (const row of filtered) {
+      const name = surfaceName(row.Surface_Type);
+      surfaceCounts.set(name, (surfaceCounts.get(name) || 0) + 1);
+    }
+    for (const name of ['Paved', 'Unpaved', 'Not supplied']) {
+      if (surfaceCounts.has(name)) surfaceTarget.append(coverageRow(name, surfaceCounts.get(name), filtered.length, name === 'Not supplied' ? 'missing' : ''));
+    }
+    if (!filtered.length) surfaceTarget.textContent = 'No stations match the current filters.';
+    for (const item of dataset.metricDefinitions) {
+      const supplied = filtered.filter(row => { const value = number(row[item.key]); return value !== null && value >= 0; }).length;
+      measureTarget.append(coverageRow(item.label, supplied, filtered.length, supplied === 0 ? 'missing' : ''));
+    }
+  }
   function renderRows() {
     const body = document.createDocumentFragment(), metric = $('metric').value;
     $('measure-heading').textContent = dataset.metricDefinitions.find(item => item.key === metric)?.label || 'Selected measure';
@@ -264,7 +298,7 @@
     const metricMean = mean(values(filtered)); $('measure-total').textContent = metricMean === null ? 'Not supplied' : fmt.format(metricMean);
     $('catalogue-count').textContent = `${fmt.format(current.stations.length)} records`;
     $('data-status').textContent = `${current.summary.year} source-reported station data. ${fmt.format(current.stations.length)} records available.`;
-    renderRows(); renderRegions(); renderMonthly(); renderMap(fit);
+    renderRows(); renderRegions(); renderMonthly(); renderCoverage(); renderMap(fit);
     refreshShareLink();
     if (selected && !filtered.includes(selected)) renderDetails(null, false);
     else if (selected) renderDetails(selected, false);
