@@ -25,10 +25,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Prepare public workspace
         run: |
-          mkdir -p public
-          cp -r assets data legacy_assets public/ 2>/dev/null || true
-          cp -r *.json *.geojson *.html *.css *.js *.svg robots.txt .nojekyll public/ 2>/dev/null || true
+          mkdir -p public/data public/assets
+          cp -r assets/* public/assets/ 2>/dev/null || true
+          cp -r data/* public/data/ 2>/dev/null || true
+          cp -r legacy_assets public/ 2>/dev/null || true
+          cp *.json public/ 2>/dev/null || true
+          cp *.geojson public/ 2>/dev/null || true
+          cp index.html mobility.html mobility.css workspace-tabs.css mobility.js favicon.svg icons.svg robots.txt .nojekyll public/ 2>/dev/null || true
           test -s public/index.html
+          test -d public/assets
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload public workspace
