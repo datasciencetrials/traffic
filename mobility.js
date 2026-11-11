@@ -214,21 +214,44 @@
     const html = `<span class="pin-art" aria-hidden="true"><svg viewBox="0 0 38 48" width="34" height="43"><path d="M19 2 34 10 34 26 19 45 4 26 4 10Z" fill="#0b476d"/><path d="M19 2 34 10 19 18 4 10Z" fill="${colour}"/><path d="M4 10 19 18 19 45 4 26Z" fill="#167ba2"/><path d="M34 10 19 18 19 45 34 26Z" fill="#0b6089"/><circle cx="19" cy="12" r="6" fill="${centre}" stroke="#fff" stroke-width="1.5"/><text x="19" y="15" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="10">${symbol}</text></svg></span>`;
     return L.divIcon({ className: 'station-pin', html, iconSize: [34, 43], iconAnchor: [17, 42] });
   }
+  function groupIcon(colour, needsReview, count) {
+    const centre = needsReview ? '#b85d00' : '#137a59';
+    const symbol = needsReview ? '!' : '✓';
+    const html = `<span class="pin-art" aria-hidden="true"><svg viewBox="0 0 54 58" width="48" height="52"><path d="M27 2 51 14 51 42 27 56 3 42 3 14Z" fill="#0b476d"/><path d="M27 2 51 14 27 26 3 14Z" fill="${colour}"/><path d="M3 14 27 26 27 56 3 42Z" fill="#167ba2"/><path d="M51 14 27 26 27 56 51 42Z" fill="#0b6089"/><text x="27" y="20" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="15">${count}</text><circle cx="43" cy="9" r="7" fill="${centre}" stroke="#fff" stroke-width="2"/><text x="43" y="12" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="10">${symbol}</text></svg></span>`;
+    return L.divIcon({ className: 'station-pin', html, iconSize: [48, 52], iconAnchor: [24, 50] });
+  }
   function renderMap(fit = false) {
     if (!map || !current) return;
     markers.clearLayers();
     if (!$('show-stations').checked) { $('map-status').textContent = 'Station layer hidden'; return; }
     const metricValues = values(filtered), maximum = Math.max(...metricValues, 1), bounds = [];
-    $('value-legend').textContent = `${metricValues.length ? 'Point colour shows lower to higher selected values.' : 'No selected measure is supplied. Grey markers indicate missing values.'} Amber ! means verification needed; green check means source-reported. Marker titles state the full status.`;
-    for (const row of filtered) {
+    const zoom = map.getZoom(), cellSize = zoom <= 7 ? 56 : zoom <= 9 ? 42 : 0;
+    const groups = new Map();
+    $('value-legend').textContent = `${metricValues.length ? 'Point colour shows lower to higher selected values.' : 'No selected measure is supplied. Grey markers indicate missing values.'} Numbered symbols group nearby stations at wider views; zoom in to inspect each. Amber ! means verification needed; green check means source-reported.`;
+    for (const [index, row] of filtered.entries()) {
       const xy = coordinates(row); if (!xy) continue;
       const [lon, lat] = xy;
-      const value = number(row[$('metric').value]);
-      const rowStatus = status(row);
-      const marker = L.marker([lat, lon], { icon: pinIcon(value === null ? '#8798a1' : pinColour(value, maximum), rowStatus !== 'Source-reported'), title: `${stationKey(row)}, ${text(row.Link_Name)}. Selected measure: ${value === null ? 'Not supplied' : fmt.format(value)}. ${rowStatus}` });
-      marker.on('click', () => renderDetails(row)); marker.addTo(markers); bounds.push([lat, lon]);
+      const point = cellSize ? map.project([lat, lon], zoom) : null;
+      const key = point ? `${Math.floor(point.x / cellSize)}:${Math.floor(point.y / cellSize)}` : String(index);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push({ row, lat, lon });
+      bounds.push([lat, lon]);
     }
-    $('map-status').textContent = `${bounds.length} source-reported station points shown for ${current.summary.year}. ${metricValues.length ? `${metricValues.length} selected values supplied.` : 'Selected measure not supplied.'} Select area uses two map clicks.`;
+    for (const group of groups.values()) {
+      if (group.length === 1) {
+        const { row, lat, lon } = group[0], value = number(row[$('metric').value]), rowStatus = status(row);
+        const marker = L.marker([lat, lon], { icon: pinIcon(value === null ? '#8798a1' : pinColour(value, maximum), rowStatus !== 'Source-reported'), title: `${stationKey(row)}, ${text(row.Link_Name)}. Selected measure: ${value === null ? 'Not supplied' : fmt.format(value)}. ${rowStatus}` });
+        marker.on('click', () => renderDetails(row)); marker.addTo(markers);
+        continue;
+      }
+      const lat = mean(group.map(item => item.lat)), lon = mean(group.map(item => item.lon));
+      const groupValues = values(group.map(item => item.row));
+      const needsReview = group.some(item => status(item.row) !== 'Source-reported');
+      const marker = L.marker([lat, lon], { icon: groupIcon(groupValues.length ? pinColour(mean(groupValues), maximum) : '#8798a1', needsReview, group.length), title: `${group.length} nearby stations. ${needsReview ? 'Some values need verification.' : 'Source-reported values.'} Zoom in to inspect individual stations.` });
+      marker.on('click', () => map.setView([lat, lon], Math.min(zoom + 2, 12)));
+      marker.addTo(markers);
+    }
+    $('map-status').textContent = `${bounds.length} source-reported station points in ${groups.size} map symbols for ${current.summary.year}. ${metricValues.length ? `${metricValues.length} selected values supplied.` : 'Selected measure not supplied.'} Select area uses two map clicks.`;
     if (fit && bounds.length) map.fitBounds(bounds, { padding: [22, 22], maxZoom: 9 });
   }
   function render(fit = false) {
@@ -263,6 +286,7 @@
     map = L.map('map', { preferCanvas: true, zoomControl: true }).setView([1.35, 32.3], 7);
     tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
     markers = L.layerGroup().addTo(map);
+    map.on('zoomend', () => renderMap());
     map.on('click', event => {
       if ($('draw-area').getAttribute('aria-pressed') !== 'true') return;
       if (!areaStart) { areaStart = event.latlng; $('map-status').textContent = 'Select the opposite corner of the area.'; return; }
