@@ -189,8 +189,8 @@ const availableSchemas = [
       },
       "ministry_of_works_and_transport": {
         "type": "string",
-        "title": "MINISTRY OF WORKS AND TRANSPORT",
-        "description": "Enter the specified MINISTRY OF WORKS AND TRANSPORT."
+        "title": "National Transport Authority",
+        "description": "Enter the specified National Transport Authority."
       },
       "plate_number": {
         "type": "string",
@@ -319,8 +319,8 @@ const availableSchemas = [
       },
       "ministry_of_works_and_transport": {
         "type": "string",
-        "title": "MINISTRY OF WORKS AND TRANSPORT",
-        "description": "Enter the specified MINISTRY OF WORKS AND TRANSPORT."
+        "title": "National Transport Authority",
+        "description": "Enter the specified National Transport Authority."
       },
       "plate_number": {
         "type": "string",
@@ -449,8 +449,8 @@ const availableSchemas = [
       },
       "ministry_of_works_and_transport": {
         "type": "string",
-        "title": "MINISTRY OF WORKS AND TRANSPORT",
-        "description": "Enter the specified MINISTRY OF WORKS AND TRANSPORT."
+        "title": "National Transport Authority",
+        "description": "Enter the specified National Transport Authority."
       },
       "plate_number": {
         "type": "string",
