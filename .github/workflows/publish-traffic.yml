@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+      - name: Check public entry accuracy
+        run: node scripts/check-public-entry.mjs
       - name: Prepare public workspace
         run: |
           mkdir -p public/data public/assets
