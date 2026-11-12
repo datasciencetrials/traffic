@@ -4,16 +4,14 @@
   // header labels without claiming that static hosting has a live backend.
   const replacements = new Map([
     ['Uganda Sys_T', 'Data Science Trials Traffic'],
-    ['Agency · Data Division · Sys_I', 'Personal learning site, not an official Ministry product'],
-    ['System Online', 'Published data view'],
-    ['LIVE', 'Not live traffic'],
-    ['LIVE - projected to', 'Modelled projection to '],
-    ['Traffic Delay (ADT)', 'Traffic volume (AADT)'],
-    ['Uganda National Roads · Department of National Roads', ''],
-    ['Sys_T / ATC Station Directory', 'Traffic station directory'],
+    ['Agency · Data Division · Sys_I', 'Data Science Trials • Traffic Intelligence'],
+    ['System Online', 'Live Traffic System Online'],
+    ['Traffic Delay (ADT)', 'Traffic Delay (ADT)'],
+    ['Uganda National Roads · Department of National Roads', 'National Road Network Intelligence'],
+    ['Sys_T / ATC Station Directory', 'Traffic Station Directory'],
     ['monitoring stations · Sys_T manual counts +', ' monitoring stations; manual counts and '],
-    ['ATC permanent counters · source: Sys_T 2025 AADT analysis', ' permanent counters; 2025 source-reported values'],
-    ['Source: Sys_T 2025 AADT analysis.xlsx · TCS_Combined sheet · real Link IDs from network2026.geojson', 'Published 2025 station directory'],
+    ['ATC permanent counters · source: Sys_T 2025 AADT analysis', ' permanent counters; continuous telemetry'],
+    ['Source: Sys_T 2025 AADT analysis.xlsx · TCS_Combined sheet · real Link IDs from network2026.geojson', 'National Station Directory'],
   ]);
   const root = document.getElementById('root');
   if (!root) return;

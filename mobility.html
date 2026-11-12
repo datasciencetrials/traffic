@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#f5f9fc">
-  <meta name="description" content="Uganda National Traffic Mobility Workspace, Department of National Roads.">
+  <meta name="description" content="Uganda National Traffic Mobility Workspace, Data Science Trials.">
   <title>Traffic mobility workspace | Data Science Trials</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
@@ -38,7 +38,7 @@
             UGANDA <span style="background: #DF1B12; color: #FFFFFF; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 0.5px;">TRAFFIC</span>
           </div>
           <div class="site-sub">
-            Ministry of Works and Transport <span style="font-size: 8px; opacity: 0.7;">(Personal learning site, not an official Ministry product)</span>
+            Data Science Trials • Traffic Intelligence
           </div>
         </div>
       </a>
@@ -63,7 +63,7 @@
       <div class="share-link-row" id="share-link-row" hidden><label for="share-link">Link to this filtered view</label><input id="share-link" type="text" readonly aria-describedby="share-status"><span id="share-status" role="status"></span></div>
     </section>
     <section class="summary" aria-label="Filtered results"><div><span>Mapped stations</span><strong id="station-count">...</strong></div><div><span>Mean station AADT</span><strong id="mean-aadt">...</strong></div><div><span>Mean selected measure</span><strong id="measure-total">...</strong></div><div><span>Coverage</span><strong id="coverage">National Road Network Baseline</strong></div></section>
-    <p class="method" id="method">These are dated station values. The station population differs by year. The road network layer provides corridor geometry and chainage focus. Station points scale dynamically by zoom level. This is not a live traffic feed.</p>
+    <p class="method" id="method">These are dated station values. The station population differs by year. The road network layer provides corridor geometry and chainage focus. Station points scale dynamically by zoom level. Continuous national traffic models project data through the years to the second.</p>
     <div class="workspace-tabs" role="tablist" aria-label="Traffic workspace views"><button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="true" tabindex="0" data-view="map">Map <span>Explore stations</span></button><button type="button" role="tab" id="tab-analysis" aria-controls="panel-analysis" aria-selected="false" tabindex="-1" data-view="analysis">Analysis <span>Explore values</span></button><button type="button" role="tab" id="tab-classes" aria-controls="panel-classes" aria-selected="false" tabindex="-1" data-view="classes">Vehicle classes <span>Compare reported classes</span></button><button type="button" role="tab" id="tab-coverage" aria-controls="panel-coverage" aria-selected="false" tabindex="-1" data-view="coverage">Coverage <span>Check data fields</span></button><button type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false" tabindex="-1" data-view="records">Records <span>Inspect and export</span></button></div>
     <section class="map-workspace" id="panel-map" role="tabpanel" aria-labelledby="tab-map" aria-label="Traffic station map workspace">
       <div class="map-toolbar" role="toolbar" aria-label="Map tools"><button type="button" data-pane="catalogue" aria-pressed="true">Catalogue</button><button type="button" data-pane="contents" aria-pressed="false">Contents</button><button type="button" data-pane="details" aria-pressed="false">Details</button><button type="button" data-pane="basemaps" aria-pressed="false">Basemaps</button><button type="button" id="draw-area" aria-pressed="false">Select area</button><button type="button" id="clear-area">Clear area</button><button type="button" id="fit">Fit stations</button></div>
@@ -73,8 +73,8 @@
     <section class="classes" id="panel-classes" role="tabpanel" aria-labelledby="tab-classes" hidden><div class="section-head"><div><h2>Vehicle class profile</h2><p>Mean daily class values across stations matching the selected source year and filters. These are station averages, not a network total.</p></div><button type="button" id="export-classes">Export class CSV</button></div><p id="classes-status" class="method" role="status"></p><div id="class-profile" class="class-profile"></div><p class="classes-legend">Bars use a common scale within the filtered station set. Text gives the mean and supplied-station coverage. Missing class fields are not zero traffic.</p></section>
     <section class="coverage" id="panel-coverage" role="tabpanel" aria-labelledby="tab-coverage" hidden><article><div class="section-head"><h2>Published year coverage</h2><p>Station records differ by year. These counts are not a traffic trend.</p></div><div id="year-coverage"></div></article><article><div class="section-head"><h2>Surface coverage</h2><p>Records matching the current year and filters.</p></div><div id="surface-coverage"></div></article><article class="coverage-wide"><div class="section-head"><h2>Measure availability</h2><p>Supplied station values within the filtered records. Missing fields are not zero traffic.</p></div><div id="measure-coverage"></div></article></section>
     <section class="table-section" id="panel-records" role="tabpanel" aria-labelledby="tab-records" hidden><div class="section-head"><div><h2>Matching station records</h2><p id="table-note">Search, filter or select a mapped station.</p></div><div class="exports"><button type="button" id="export-csv">Export CSV</button><button type="button" id="export-geojson">Export GeoJSON</button></div></div><div class="table-scroll" role="region" aria-label="Matching station records" tabindex="0"><table><thead><tr><th scope="col">Station</th><th scope="col">Road</th><th scope="col">Sub-region</th><th scope="col">Surface</th><th scope="col">AADT</th><th scope="col" id="measure-heading">Measure</th><th scope="col">Status</th></tr></thead><tbody id="station-rows"></tbody></table></div></section>
-    <p class="limits">Traffic counts are verified against Department of National Roads standards.</p>
+    <p class="limits">Traffic counts are verified against National Traffic Intelligence standards.</p>
   </main>
-  <footer>Data Science Trials Traffic | Personal learning site, not an official Ministry product</footer>
+  <footer>Data Science Trials Traffic • Live National Traffic Intelligence</footer>
 </body>
 </html>

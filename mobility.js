@@ -34,7 +34,7 @@
     return value !== null && value === number(prior.ADT_including_motorbikes);
   };
   const repeats2023 = row => current.summary.year === 2024 && repeatsAgainst2023(row);
-  const status = row => Number(row.Observed_Days) > 0 ? 'Verified MoWT Survey' : 'MoWT DNR Baseline';
+  const status = row => Number(row.Observed_Days) > 0 ? 'Verified Traffic Census' : 'National Census Baseline';
   const values = rows => rows.map(row => number(row[$('metric').value])).filter(value => value !== null && value >= 0);
   const mean = array => array.length ? array.reduce((sum, n) => sum + n, 0) / array.length : null;
   function setPane(name) {

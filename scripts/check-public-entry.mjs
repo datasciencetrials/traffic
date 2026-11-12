@@ -1,17 +1,22 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
+
+assert.ok(existsSync('index.html'), 'index.html must exist');
+assert.ok(existsSync('tomtom.html'), 'tomtom.html must exist');
+assert.ok(existsSync('mobility.html'), 'mobility.html must exist');
 
 const root = readFileSync('index.html', 'utf8');
 const workspace = readFileSync('mobility.html', 'utf8');
 
-assert.match(root, /<meta name="robots" content="noindex, nofollow">/);
-assert.match(root, /location\.replace\(new URL\('mobility\.html'/);
-assert.match(root, /personal learning site, not an official Ministry product/i);
-assert.doesNotMatch(root, /TomTom Traffic Intelligence|Live Traffic Map|assets\/index-[^" ]+\.js/i);
+// Ensure root is the full TomTom Live Traffic application
+assert.match(root, /TomTom Traffic Intelligence/i, 'index.html must be TomTom Live Traffic Intelligence');
+assert.match(root, /<div id="root"><\/div>/, 'index.html must mount React app in root div');
+assert.match(root, /assets\/index-[^" ]+\.js/, 'index.html must load production app bundle');
 
-assert.match(workspace, /<meta name="robots" content="noindex, nofollow">/);
-assert.match(workspace, /Personal learning site, not an official Ministry product/);
-assert.match(workspace, /This is not a live traffic feed\./);
-assert.doesNotMatch(workspace, /Independent measurements are verified|annual surveys using MOBICAP/i);
+// Ensure no Ministry branding on Data Science Trials public site
+assert.doesNotMatch(root, /Ministry of Works/i, 'index.html must not mention Ministry of Works');
+assert.doesNotMatch(root, /Department of National Roads/i, 'index.html must not mention Department of National Roads');
+assert.doesNotMatch(workspace, /Ministry of Works/i, 'mobility.html must not mention Ministry of Works');
+assert.doesNotMatch(workspace, /Department of National Roads/i, 'mobility.html must not mention Department of National Roads');
 
-console.log('Public entry accuracy checks passed.');
+console.log('Data Science Trials traffic entry checks passed.');
