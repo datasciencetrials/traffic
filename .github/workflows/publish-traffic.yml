@@ -33,7 +33,7 @@ jobs:
           cp -r legacy_assets public/ 2>/dev/null || true
           cp *.json public/ 2>/dev/null || true
           cp *.geojson public/ 2>/dev/null || true
-          cp index.html mobility.html mobility.css workspace-tabs.css mobility.js favicon.svg icons.svg robots.txt .nojekyll public/ 2>/dev/null || true
+          cp index.html mobility.html tomtom.html mobility.css workspace-tabs.css mobility.js favicon.svg icons.svg robots.txt .nojekyll public/ 2>/dev/null || true
           test -s public/index.html
           test -d public/assets
       - name: Configure Pages

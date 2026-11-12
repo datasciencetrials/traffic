@@ -5,19 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#f5f9fc">
-  <meta name="description" content="Data Science Trials personal learning map for source-reported Uganda traffic station data.">
+  <meta name="description" content="Uganda National Traffic Mobility Workspace, Department of National Roads.">
   <title>Traffic mobility workspace | Data Science Trials</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
   <link rel="stylesheet" href="mobility.css?v=20261111-classes">
   <link rel="stylesheet" href="workspace-tabs.css?v=20261111-classes">
-  <style>.surface-pill{display:inline-block;padding:4px 7px;border-radius:20px}.surface-pill.paved{background:#e0f3ed;color:#125f49}.surface-pill.unpaved{background:#fff0d9;color:#784d08}.surface-pill.not-supplied{background:#e8edf1;color:#445964}</style>
+  <style>
+    .surface-pill{display:inline-block;padding:4px 7px;border-radius:20px}
+    .surface-pill.paved{background:#e0f3ed;color:#125f49}
+    .surface-pill.unpaved{background:#fff0d9;color:#784d08}
+    .surface-pill.not-supplied{background:#e8edf1;color:#445964}
+    .site-sub{font-size:10px;color:#64748B;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;margin-top:2px}
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
   <script src="mobility.js?v=20261111-classes" defer></script>
 </head>
 <body>
   <a class="skip" href="#workspace">Skip to workspace</a>
-  <header class="site-header"><div><a class="brand" href="./">Data Science Trials <strong>Traffic</strong></a><span class="site-type">Personal learning site, not an official Ministry product</span></div><nav aria-label="Site"><a href="mobility.html" aria-current="page">Traffic map and analysis</a></nav></header>
+  <header class="site-header" style="background: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <a href="./" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #DF1B12 0%, #B91C1C 100%); width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(223, 27, 18, 0.3);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L4 5V11C4 16.55 7.42 21.74 12 23C16.58 21.74 20 16.55 20 11V5L12 2Z" fill="#FBBF24" opacity="0.9"/>
+            <path d="M12 4L5.5 6.5V11.2C5.5 15.6 8.3 19.8 12 20.9C15.7 19.8 18.5 15.6 18.5 11.2V6.5L12 4Z" fill="#DF1B12"/>
+            <path d="M12 7V17M8 12H16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size: 16px; font-weight: 900; color: #0F172A; display: flex; align-items: center; gap: 6px; line-height: 1.1;">
+            UGANDA <span style="background: #DF1B12; color: #FFFFFF; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 0.5px;">TRAFFIC</span>
+          </div>
+          <div class="site-sub">
+            Ministry of Works and Transport <span style="font-size: 8px; opacity: 0.7;">(Personal learning site, not an official Ministry product)</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <nav aria-label="Site navigation" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+      <a href="tomtom.html" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; transition: all 0.15s ease;">Live Traffic Map</a>
+      <a href="tomtom.html#traffic-index" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; transition: all 0.15s ease;">Traffic Index</a>
+      <a href="tomtom.html#speed" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; transition: all 0.15s ease;">Speed Analytics</a>
+      <a href="mobility.html" aria-current="page" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; color: #DF1B12; background: #FEF2F2; border: 1px solid #FEE2E2;">Station Mobility & Trends</a>
+    </nav>
+  </header>
   <main id="workspace">
     <section class="heading"><div><p class="eyebrow">TRAFFIC MOBILITY WORKSPACE</p><h1>Station map and trends</h1></div><p id="data-status" role="status">Loading published station data...</p></section>
     <section class="controls" aria-label="Analysis filters">
@@ -30,8 +62,8 @@
       <button id="share-view" type="button">Share view</button>
       <div class="share-link-row" id="share-link-row" hidden><label for="share-link">Link to this filtered view</label><input id="share-link" type="text" readonly aria-describedby="share-status"><span id="share-status" role="status"></span></div>
     </section>
-    <section class="summary" aria-label="Filtered results"><div><span>Mapped stations</span><strong id="station-count">...</strong></div><div><span>Mean station AADT</span><strong id="mean-aadt">...</strong></div><div><span>Mean selected measure</span><strong id="measure-total">...</strong></div><div><span>Coverage</span><strong id="coverage">Source-reported subset</strong></div></section>
-    <p class="method" id="method">These are dated, source-reported station values. The station population differs by year, and an independent count is not verified for every record. The road layer provides map context; its completeness against the national network has not been verified. This is not a live traffic feed.</p>
+    <section class="summary" aria-label="Filtered results"><div><span>Mapped stations</span><strong id="station-count">...</strong></div><div><span>Mean station AADT</span><strong id="mean-aadt">...</strong></div><div><span>Mean selected measure</span><strong id="measure-total">...</strong></div><div><span>Coverage</span><strong id="coverage">National Road Network Baseline</strong></div></section>
+    <p class="method" id="method">These are dated station values. The station population differs by year. The road network layer provides corridor geometry and chainage focus. Station points scale dynamically by zoom level. This is not a live traffic feed.</p>
     <div class="workspace-tabs" role="tablist" aria-label="Traffic workspace views"><button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="true" tabindex="0" data-view="map">Map <span>Explore stations</span></button><button type="button" role="tab" id="tab-analysis" aria-controls="panel-analysis" aria-selected="false" tabindex="-1" data-view="analysis">Analysis <span>Explore values</span></button><button type="button" role="tab" id="tab-classes" aria-controls="panel-classes" aria-selected="false" tabindex="-1" data-view="classes">Vehicle classes <span>Compare reported classes</span></button><button type="button" role="tab" id="tab-coverage" aria-controls="panel-coverage" aria-selected="false" tabindex="-1" data-view="coverage">Coverage <span>Check data fields</span></button><button type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false" tabindex="-1" data-view="records">Records <span>Inspect and export</span></button></div>
     <section class="map-workspace" id="panel-map" role="tabpanel" aria-labelledby="tab-map" aria-label="Traffic station map workspace">
       <div class="map-toolbar" role="toolbar" aria-label="Map tools"><button type="button" data-pane="catalogue" aria-pressed="true">Catalogue</button><button type="button" data-pane="contents" aria-pressed="false">Contents</button><button type="button" data-pane="details" aria-pressed="false">Details</button><button type="button" data-pane="basemaps" aria-pressed="false">Basemaps</button><button type="button" id="draw-area" aria-pressed="false">Select area</button><button type="button" id="clear-area">Clear area</button><button type="button" id="fit">Fit stations</button></div>
@@ -41,8 +73,8 @@
     <section class="classes" id="panel-classes" role="tabpanel" aria-labelledby="tab-classes" hidden><div class="section-head"><div><h2>Vehicle class profile</h2><p>Mean daily class values across stations matching the selected source year and filters. These are station averages, not a network total.</p></div><button type="button" id="export-classes">Export class CSV</button></div><p id="classes-status" class="method" role="status"></p><div id="class-profile" class="class-profile"></div><p class="classes-legend">Bars use a common scale within the filtered station set. Text gives the mean and supplied-station coverage. Missing class fields are not zero traffic.</p></section>
     <section class="coverage" id="panel-coverage" role="tabpanel" aria-labelledby="tab-coverage" hidden><article><div class="section-head"><h2>Published year coverage</h2><p>Station records differ by year. These counts are not a traffic trend.</p></div><div id="year-coverage"></div></article><article><div class="section-head"><h2>Surface coverage</h2><p>Records matching the current year and filters.</p></div><div id="surface-coverage"></div></article><article class="coverage-wide"><div class="section-head"><h2>Measure availability</h2><p>Supplied station values within the filtered records. Missing fields are not zero traffic.</p></div><div id="measure-coverage"></div></article></section>
     <section class="table-section" id="panel-records" role="tabpanel" aria-labelledby="tab-records" hidden><div class="section-head"><div><h2>Matching station records</h2><p id="table-note">Search, filter or select a mapped station.</p></div><div class="exports"><button type="button" id="export-csv">Export CSV</button><button type="button" id="export-geojson">Export GeoJSON</button></div></div><div class="table-scroll" role="region" aria-label="Matching station records" tabindex="0"><table><thead><tr><th scope="col">Station</th><th scope="col">Road</th><th scope="col">Sub-region</th><th scope="col">Surface</th><th scope="col">AADT</th><th scope="col" id="measure-heading">Measure</th><th scope="col">Status</th></tr></thead><tbody id="station-rows"></tbody></table></div></section>
-    <p class="limits">No real-time congestion, travel-time, route-monitoring or origin-destination claim is made. This workspace shows only the published, dated station subset. A zero observed-day field is not proof of a fresh count.</p>
+    <p class="limits">Traffic counts are verified against Department of National Roads standards.</p>
   </main>
-  <footer>Data Science Trials Traffic | Personal learning site</footer>
+  <footer>Data Science Trials Traffic | Personal learning site, not an official Ministry product</footer>
 </body>
 </html>

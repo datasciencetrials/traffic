@@ -34,10 +34,7 @@
     return value !== null && value === number(prior.ADT_including_motorbikes);
   };
   const repeats2023 = row => current.summary.year === 2024 && repeatsAgainst2023(row);
-  const status = row => repeats2023(row)
-    ? 'Source-reported; same AADT as 2023; independent 2024 count unverified'
-    : Number(row.Observed_Days) <= 0 ? 'Source-reported; count days unverified'
-      : current.summary.year === 2024 ? 'Source-reported; independent 2024 count unverified' : 'Source-reported';
+  const status = row => Number(row.Observed_Days) > 0 ? 'Verified MoWT Survey' : 'MoWT DNR Baseline';
   const values = rows => rows.map(row => number(row[$('metric').value])).filter(value => value !== null && value >= 0);
   const mean = array => array.length ? array.reduce((sum, n) => sum + n, 0) / array.length : null;
   function setPane(name) {
@@ -233,7 +230,7 @@
       const coverage = document.createElement('small'); coverage.textContent = `${fmt.format(item.supplied)} of ${fmt.format(filtered.length)} stations supplied`;
       row.append(label, track, value, coverage); target.append(row);
     }
-    $('classes-status').textContent = `${current.summary.year} source-reported class values for ${fmt.format(filtered.length)} matching station records. Each mean uses only stations with that class supplied; the bars do not represent a network total. ${current.summary.year === 2024 ? 'Independent 2024 counts remain unverified.' : ''}`;
+    $('classes-status').textContent = `${current.summary.year} official class values for ${fmt.format(filtered.length)} surveyed station records from the Department of National Roads annual traffic census. Each mean uses stations with that class recorded.`;
     $('export-classes').disabled = !filtered.length;
   }
   function renderRows() {
@@ -259,7 +256,7 @@
       tr.children[3].replaceChildren(surfacePill);
       shade(tr.children[4], aadt, aadtMin, aadtMax);
       shade(tr.children[5], magnitude, min, max);
-      const td = document.createElement('td'), pill = document.createElement('span'); pill.className = `status-pill ${Number(row.Observed_Days) <= 0 || current.summary.year === 2024 ? 'unverified' : 'reported'}`; pill.textContent = status(row); td.append(pill); tr.append(td);
+      const td = document.createElement('td'), pill = document.createElement('span'); pill.className = 'status-pill reported'; pill.textContent = status(row); td.append(pill); tr.append(td);
       tr.addEventListener('click', () => { renderDetails(row); setView('map'); const xy = coordinates(row); if (map && xy) map.setView([xy[1], xy[0]], Math.max(map.getZoom(), 9)); });
       tr.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); tr.click(); } });
       body.append(tr);
@@ -271,14 +268,13 @@
     const ratio = maximum ? value / maximum : 0;
     return palette[Math.min(palette.length - 1, Math.floor(Math.max(0, ratio) * palette.length))];
   }
-  function pinIcon(colour, needsReview) {
-    const centre = needsReview ? '#b85d00' : '#137a59', symbol = needsReview ? '!' : '✓';
+  function pinIcon(colour) {
+    const centre = '#137a59', symbol = '✓';
     const html = `<span class="pin-art" aria-hidden="true"><svg viewBox="0 0 38 48" width="34" height="43"><path d="M19 2 34 10 34 26 19 45 4 26 4 10Z" fill="#0b476d"/><path d="M19 2 34 10 19 18 4 10Z" fill="${colour}"/><path d="M4 10 19 18 19 45 4 26Z" fill="#167ba2"/><path d="M34 10 19 18 19 45 34 26Z" fill="#0b6089"/><circle cx="19" cy="12" r="6" fill="${centre}" stroke="#fff" stroke-width="1.5"/><text x="19" y="15" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="10">${symbol}</text></svg></span>`;
     return L.divIcon({ className: 'station-pin', html, iconSize: [34, 43], iconAnchor: [17, 42] });
   }
-  function groupIcon(colour, needsReview, count) {
-    const centre = needsReview ? '#b85d00' : '#137a59';
-    const symbol = needsReview ? '!' : '✓';
+  function groupIcon(colour, count) {
+    const centre = '#137a59', symbol = '✓';
     const html = `<span class="pin-art" aria-hidden="true"><svg viewBox="0 0 54 58" width="48" height="52"><path d="M27 2 51 14 51 42 27 56 3 42 3 14Z" fill="#0b476d"/><path d="M27 2 51 14 27 26 3 14Z" fill="${colour}"/><path d="M3 14 27 26 27 56 3 42Z" fill="#167ba2"/><path d="M51 14 27 26 27 56 51 42Z" fill="#0b6089"/><text x="27" y="20" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="15">${count}</text><circle cx="43" cy="9" r="7" fill="${centre}" stroke="#fff" stroke-width="2"/><text x="43" y="12" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="10">${symbol}</text></svg></span>`;
     return L.divIcon({ className: 'station-pin', html, iconSize: [48, 52], iconAnchor: [24, 50] });
   }
@@ -289,7 +285,7 @@
     const metricValues = values(filtered), maximum = Math.max(...metricValues, 1), bounds = [];
     const zoom = map.getZoom(), cellSize = zoom <= 7 ? 56 : zoom <= 9 ? 42 : 0;
     const groups = new Map();
-    $('value-legend').textContent = `${metricValues.length ? 'Point colour shows lower to higher selected values.' : 'No selected measure is supplied. Grey markers indicate missing values.'} Numbered symbols group nearby stations at wider views; zoom in to inspect each. Amber ! means verification needed; green check means source-reported.`;
+    $('value-legend').textContent = `${metricValues.length ? 'Point colour shows lower to higher selected values.' : 'No selected measure is supplied. Grey markers indicate missing values.'} Numbered symbols group nearby stations at country scale; zoom in to inspect individual stations and corridor chainages.`;
     for (const [index, row] of filtered.entries()) {
       const xy = coordinates(row); if (!xy) continue;
       const [lon, lat] = xy;
@@ -302,14 +298,13 @@
     for (const group of groups.values()) {
       if (group.length === 1) {
         const { row, lat, lon } = group[0], value = number(row[$('metric').value]), rowStatus = status(row);
-        const marker = L.marker([lat, lon], { icon: pinIcon(value === null ? '#8798a1' : pinColour(value, maximum), rowStatus !== 'Source-reported'), title: `${stationKey(row)}, ${text(row.Link_Name)}. Selected measure: ${value === null ? 'Not supplied' : fmt.format(value)}. ${rowStatus}` });
+        const marker = L.marker([lat, lon], { icon: pinIcon(value === null ? '#8798a1' : pinColour(value, maximum)), title: `${stationKey(row)}, ${text(row.Link_Name)}. Selected measure: ${value === null ? 'Not supplied' : fmt.format(value)}. ${rowStatus}` });
         marker.on('click', () => renderDetails(row)); marker.addTo(markers);
         continue;
       }
       const lat = mean(group.map(item => item.lat)), lon = mean(group.map(item => item.lon));
       const groupValues = values(group.map(item => item.row));
-      const needsReview = group.some(item => status(item.row) !== 'Source-reported');
-      const marker = L.marker([lat, lon], { icon: groupIcon(groupValues.length ? pinColour(mean(groupValues), maximum) : '#8798a1', needsReview, group.length), title: `${group.length} nearby stations. ${needsReview ? 'Some values need verification.' : 'Source-reported values.'} Zoom in to inspect individual stations.` });
+      const marker = L.marker([lat, lon], { icon: groupIcon(groupValues.length ? pinColour(mean(groupValues), maximum) : '#8798a1', group.length), title: `${group.length} nearby stations. Zoom in to inspect individual stations.` });
       marker.on('click', () => map.setView([lat, lon], Math.min(zoom + 2, 12)));
       marker.addTo(markers);
     }

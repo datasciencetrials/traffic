@@ -2,6 +2,19 @@
   "hourly_by_site": [
     {
       "Hour Starting": "00:00",
+      "U0001": 51.1,
+      "U0002": 43.9,
+      "U0003": 46.9,
+      "U0004": 54.5,
+      "U0005": 49.9,
+      "U0006": 55.9,
+      "U0007": 57.7,
+      "U0008": 63.0,
+      "U0009": 60.4,
+      "U0010": 55.6
+    },
+    {
+      "Hour Starting": "01:00",
       "U0001": 52.7,
       "U0002": 46.7,
       "U0003": 47.7,
@@ -14,7 +27,7 @@
       "U0010": 58.9
     },
     {
-      "Hour Starting": "01:00",
+      "Hour Starting": "02:00",
       "U0001": 52.9,
       "U0002": 49.0,
       "U0003": 48.2,
@@ -27,20 +40,20 @@
       "U0010": 61.4
     },
     {
-      "Hour Starting": "02:00",
+      "Hour Starting": "03:00",
       "U0001": 53.4,
       "U0002": 51.0,
       "U0003": 49.0,
       "U0004": 52.4,
       "U0005": 49.7,
       "U0006": 58.7,
-      "U0007": 61.5,
+      "U0007": 61.4,
       "U0008": 59.2,
       "U0009": 61.2,
       "U0010": 63.2
     },
     {
-      "Hour Starting": "03:00",
+      "Hour Starting": "04:00",
       "U0001": 54.8,
       "U0002": 52.7,
       "U0003": 50.2,
@@ -53,7 +66,7 @@
       "U0010": 64.8
     },
     {
-      "Hour Starting": "04:00",
+      "Hour Starting": "05:00",
       "U0001": 57.9,
       "U0002": 53.2,
       "U0003": 51.1,
@@ -66,7 +79,7 @@
       "U0010": 65.8
     },
     {
-      "Hour Starting": "05:00",
+      "Hour Starting": "06:00",
       "U0001": 57.2,
       "U0002": 50.5,
       "U0003": 49.9,
@@ -79,7 +92,7 @@
       "U0010": 63.6
     },
     {
-      "Hour Starting": "06:00",
+      "Hour Starting": "07:00",
       "U0001": 55.1,
       "U0002": 48.0,
       "U0003": 49.8,
@@ -92,7 +105,7 @@
       "U0010": 58.6
     },
     {
-      "Hour Starting": "07:00",
+      "Hour Starting": "08:00",
       "U0001": 52.7,
       "U0002": 45.7,
       "U0003": 48.2,
@@ -105,7 +118,7 @@
       "U0010": 56.0
     },
     {
-      "Hour Starting": "08:00",
+      "Hour Starting": "09:00",
       "U0001": 51.4,
       "U0002": 44.4,
       "U0003": 47.6,
@@ -115,10 +128,10 @@
       "U0007": 54.3,
       "U0008": 61.7,
       "U0009": 61.6,
-      "U0010": 54.0
+      "U0010": 53.9
     },
     {
-      "Hour Starting": "09:00",
+      "Hour Starting": "10:00",
       "U0001": 51.3,
       "U0002": 43.6,
       "U0003": 47.6,
@@ -131,7 +144,7 @@
       "U0010": 52.8
     },
     {
-      "Hour Starting": "10:00",
+      "Hour Starting": "11:00",
       "U0001": 51.2,
       "U0002": 42.7,
       "U0003": 47.6,
@@ -144,7 +157,7 @@
       "U0010": 52.1
     },
     {
-      "Hour Starting": "11:00",
+      "Hour Starting": "12:00",
       "U0001": 51.4,
       "U0002": 41.4,
       "U0003": 47.5,
@@ -157,7 +170,7 @@
       "U0010": 51.5
     },
     {
-      "Hour Starting": "12:00",
+      "Hour Starting": "13:00",
       "U0001": 51.7,
       "U0002": 39.3,
       "U0003": 47.0,
@@ -166,24 +179,24 @@
       "U0006": 53.1,
       "U0007": 57.6,
       "U0008": 63.4,
-      "U0009": 60.0,
+      "U0009": 60.1,
       "U0010": 51.4
     },
     {
-      "Hour Starting": "13:00",
+      "Hour Starting": "14:00",
       "U0001": 51.7,
       "U0002": 37.7,
       "U0003": 46.6,
       "U0004": 62.3,
       "U0005": 49.2,
       "U0006": 53.7,
-      "U0007": 57.6,
-      "U0008": 63.7,
+      "U0007": 57.5,
+      "U0008": 63.8,
       "U0009": 60.4,
       "U0010": 51.4
     },
     {
-      "Hour Starting": "14:00",
+      "Hour Starting": "15:00",
       "U0001": 52.0,
       "U0002": 37.3,
       "U0003": 46.1,
@@ -196,7 +209,7 @@
       "U0010": 51.5
     },
     {
-      "Hour Starting": "15:00",
+      "Hour Starting": "16:00",
       "U0001": 52.0,
       "U0002": 37.9,
       "U0003": 45.4,
@@ -209,7 +222,7 @@
       "U0010": 51.2
     },
     {
-      "Hour Starting": "16:00",
+      "Hour Starting": "17:00",
       "U0001": 51.3,
       "U0002": 38.4,
       "U0003": 45.0,
@@ -222,7 +235,7 @@
       "U0010": 49.6
     },
     {
-      "Hour Starting": "17:00",
+      "Hour Starting": "18:00",
       "U0001": 50.3,
       "U0002": 39.3,
       "U0003": 43.9,
@@ -235,7 +248,7 @@
       "U0010": 47.9
     },
     {
-      "Hour Starting": "18:00",
+      "Hour Starting": "19:00",
       "U0001": 49.5,
       "U0002": 40.1,
       "U0003": 43.2,
@@ -244,11 +257,11 @@
       "U0006": 54.2,
       "U0007": 56.4,
       "U0008": 61.8,
-      "U0009": 59.0,
+      "U0009": 58.9,
       "U0010": 48.7
     },
     {
-      "Hour Starting": "19:00",
+      "Hour Starting": "20:00",
       "U0001": 45.0,
       "U0002": 38.4,
       "U0003": 41.4,
@@ -261,7 +274,7 @@
       "U0010": 47.8
     },
     {
-      "Hour Starting": "20:00",
+      "Hour Starting": "21:00",
       "U0001": 45.6,
       "U0002": 39.0,
       "U0003": 42.1,
@@ -274,7 +287,7 @@
       "U0010": 48.4
     },
     {
-      "Hour Starting": "21:00",
+      "Hour Starting": "22:00",
       "U0001": 46.8,
       "U0002": 39.8,
       "U0003": 43.2,
@@ -287,232 +300,805 @@
       "U0010": 50.2
     },
     {
-      "Hour Starting": "22:00",
+      "Hour Starting": "23:00",
       "U0001": 48.6,
       "U0002": 41.2,
       "U0003": 44.8,
       "U0004": 53.9,
-      "U0005": 48.9,
+      "U0005": 48.8,
       "U0006": 54.0,
       "U0007": 55.6,
       "U0008": 62.1,
       "U0009": 58.6,
       "U0010": 52.4
+    }
+  ],
+  "hourly_volume_by_site": [
+    {
+      "Hour Starting": "00:00",
+      "U0001": 396,
+      "U0002": 1149,
+      "U0003": 342,
+      "U0004": 398,
+      "U0005": 107,
+      "U0006": 146,
+      "U0007": 84,
+      "U0008": 43,
+      "U0009": 194,
+      "U0010": 684
+    },
+    {
+      "Hour Starting": "01:00",
+      "U0001": 301,
+      "U0002": 819,
+      "U0003": 275,
+      "U0004": 353,
+      "U0005": 65,
+      "U0006": 74,
+      "U0007": 63,
+      "U0008": 28,
+      "U0009": 156,
+      "U0010": 478
+    },
+    {
+      "Hour Starting": "02:00",
+      "U0001": 210,
+      "U0002": 585,
+      "U0003": 240,
+      "U0004": 322,
+      "U0005": 46,
+      "U0006": 43,
+      "U0007": 51,
+      "U0008": 22,
+      "U0009": 117,
+      "U0010": 344
+    },
+    {
+      "Hour Starting": "03:00",
+      "U0001": 153,
+      "U0002": 421,
+      "U0003": 226,
+      "U0004": 272,
+      "U0005": 30,
+      "U0006": 25,
+      "U0007": 41,
+      "U0008": 18,
+      "U0009": 87,
+      "U0010": 259
+    },
+    {
+      "Hour Starting": "04:00",
+      "U0001": 135,
+      "U0002": 384,
+      "U0003": 221,
+      "U0004": 230,
+      "U0005": 26,
+      "U0006": 22,
+      "U0007": 47,
+      "U0008": 21,
+      "U0009": 70,
+      "U0010": 207
+    },
+    {
+      "Hour Starting": "05:00",
+      "U0001": 158,
+      "U0002": 482,
+      "U0003": 235,
+      "U0004": 213,
+      "U0005": 31,
+      "U0006": 30,
+      "U0007": 52,
+      "U0008": 26,
+      "U0009": 74,
+      "U0010": 204
+    },
+    {
+      "Hour Starting": "06:00",
+      "U0001": 211,
+      "U0002": 812,
+      "U0003": 283,
+      "U0004": 231,
+      "U0005": 52,
+      "U0006": 64,
+      "U0007": 54,
+      "U0008": 37,
+      "U0009": 109,
+      "U0010": 286
+    },
+    {
+      "Hour Starting": "07:00",
+      "U0001": 424,
+      "U0002": 1416,
+      "U0003": 456,
+      "U0004": 337,
+      "U0005": 154,
+      "U0006": 198,
+      "U0007": 85,
+      "U0008": 56,
+      "U0009": 213,
+      "U0010": 539
+    },
+    {
+      "Hour Starting": "08:00",
+      "U0001": 736,
+      "U0002": 1896,
+      "U0003": 706,
+      "U0004": 506,
+      "U0005": 396,
+      "U0006": 436,
+      "U0007": 183,
+      "U0008": 87,
+      "U0009": 374,
+      "U0010": 930
+    },
+    {
+      "Hour Starting": "09:00",
+      "U0001": 870,
+      "U0002": 1946,
+      "U0003": 809,
+      "U0004": 575,
+      "U0005": 536,
+      "U0006": 560,
+      "U0007": 249,
+      "U0008": 107,
+      "U0009": 469,
+      "U0010": 1165
+    },
+    {
+      "Hour Starting": "10:00",
+      "U0001": 916,
+      "U0002": 1906,
+      "U0003": 866,
+      "U0004": 599,
+      "U0005": 556,
+      "U0006": 622,
+      "U0007": 264,
+      "U0008": 122,
+      "U0009": 504,
+      "U0010": 1248
+    },
+    {
+      "Hour Starting": "11:00",
+      "U0001": 946,
+      "U0002": 1871,
+      "U0003": 911,
+      "U0004": 619,
+      "U0005": 586,
+      "U0006": 663,
+      "U0007": 281,
+      "U0008": 133,
+      "U0009": 545,
+      "U0010": 1314
+    },
+    {
+      "Hour Starting": "12:00",
+      "U0001": 940,
+      "U0002": 1732,
+      "U0003": 939,
+      "U0004": 658,
+      "U0005": 578,
+      "U0006": 685,
+      "U0007": 301,
+      "U0008": 139,
+      "U0009": 573,
+      "U0010": 1358
+    },
+    {
+      "Hour Starting": "13:00",
+      "U0001": 962,
+      "U0002": 1508,
+      "U0003": 954,
+      "U0004": 698,
+      "U0005": 548,
+      "U0006": 689,
+      "U0007": 303,
+      "U0008": 134,
+      "U0009": 600,
+      "U0010": 1388
+    },
+    {
+      "Hour Starting": "14:00",
+      "U0001": 976,
+      "U0002": 1351,
+      "U0003": 945,
+      "U0004": 711,
+      "U0005": 526,
+      "U0006": 689,
+      "U0007": 300,
+      "U0008": 124,
+      "U0009": 612,
+      "U0010": 1404
+    },
+    {
+      "Hour Starting": "15:00",
+      "U0001": 976,
+      "U0002": 1285,
+      "U0003": 935,
+      "U0004": 733,
+      "U0005": 555,
+      "U0006": 684,
+      "U0007": 297,
+      "U0008": 124,
+      "U0009": 610,
+      "U0010": 1414
+    },
+    {
+      "Hour Starting": "16:00",
+      "U0001": 991,
+      "U0002": 1290,
+      "U0003": 931,
+      "U0004": 746,
+      "U0005": 581,
+      "U0006": 697,
+      "U0007": 302,
+      "U0008": 127,
+      "U0009": 615,
+      "U0010": 1427
+    },
+    {
+      "Hour Starting": "17:00",
+      "U0001": 1009,
+      "U0002": 1349,
+      "U0003": 966,
+      "U0004": 777,
+      "U0005": 595,
+      "U0006": 726,
+      "U0007": 330,
+      "U0008": 131,
+      "U0009": 642,
+      "U0010": 1414
+    },
+    {
+      "Hour Starting": "18:00",
+      "U0001": 1051,
+      "U0002": 1406,
+      "U0003": 1021,
+      "U0004": 813,
+      "U0005": 620,
+      "U0006": 781,
+      "U0007": 342,
+      "U0008": 140,
+      "U0009": 681,
+      "U0010": 1412
+    },
+    {
+      "Hour Starting": "19:00",
+      "U0001": 1067,
+      "U0002": 1526,
+      "U0003": 1042,
+      "U0004": 822,
+      "U0005": 622,
+      "U0006": 787,
+      "U0007": 340,
+      "U0008": 139,
+      "U0009": 678,
+      "U0010": 1445
+    },
+    {
+      "Hour Starting": "20:00",
+      "U0001": 993,
+      "U0002": 1550,
+      "U0003": 947,
+      "U0004": 742,
+      "U0005": 606,
+      "U0006": 722,
+      "U0007": 310,
+      "U0008": 124,
+      "U0009": 594,
+      "U0010": 1420
+    },
+    {
+      "Hour Starting": "21:00",
+      "U0001": 846,
+      "U0002": 1624,
+      "U0003": 769,
+      "U0004": 635,
+      "U0005": 427,
+      "U0006": 576,
+      "U0007": 232,
+      "U0008": 93,
+      "U0009": 472,
+      "U0010": 1296
+    },
+    {
+      "Hour Starting": "22:00",
+      "U0001": 693,
+      "U0002": 1601,
+      "U0003": 605,
+      "U0004": 543,
+      "U0005": 269,
+      "U0006": 411,
+      "U0007": 165,
+      "U0008": 71,
+      "U0009": 353,
+      "U0010": 1103
     },
     {
       "Hour Starting": "23:00",
-      "U0001": 51.1,
-      "U0002": 43.9,
-      "U0003": 46.9,
-      "U0004": 54.5,
-      "U0005": 49.9,
-      "U0006": 55.9,
-      "U0007": 57.7,
-      "U0008": 63.0,
-      "U0009": 60.4,
-      "U0010": 55.6
+      "U0001": 533,
+      "U0002": 1446,
+      "U0003": 459,
+      "U0004": 468,
+      "U0005": 176,
+      "U0006": 267,
+      "U0007": 119,
+      "U0008": 57,
+      "U0009": 263,
+      "U0010": 926
     }
   ],
+  "site_statistics": {
+    "U0001": {
+      "site_code": "U0001",
+      "name": "Luwero - Nakasongola ATC Sensor",
+      "road_section": "Luwero - Nakasongola",
+      "link_id": "A006_Link04",
+      "corridor": "Kampala - Gulu Highway (A006)",
+      "region": "Central",
+      "maintenance_station": "Luwero",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 80,
+      "average_speed": 50.7,
+      "p85_speed": 72.0,
+      "free_flow_speed": 54.8,
+      "peak_hour_speed": 49.5,
+      "congestion_speed_drop_pct": 9.7,
+      "sample_volume": 3695681,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/07/13",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 0.818018,
+      "longitude": 32.503798
+    },
+    "U0002": {
+      "site_code": "U0002",
+      "name": "Kampala - Mukono ATC Sensor",
+      "road_section": "Kampala - Mukono",
+      "link_id": "A001_Link01",
+      "corridor": "Kampala - Jinja Highway (A001)",
+      "region": "Central",
+      "maintenance_station": "Kampala",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 80,
+      "average_speed": 42.2,
+      "p85_speed": 65.0,
+      "free_flow_speed": 52.7,
+      "peak_hour_speed": 37.3,
+      "congestion_speed_drop_pct": 29.2,
+      "sample_volume": 5624271,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/08/18",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 0.3687,
+      "longitude": 32.73805
+    },
+    "U0003": {
+      "site_code": "U0003",
+      "name": "Iganga - Nakalama ATC Sensor",
+      "road_section": "Iganga - Nakalama",
+      "link_id": "A001_Link07",
+      "corridor": "Jinja - Malaba Corridor (A001)",
+      "region": "Eastern",
+      "maintenance_station": "Jinja",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 80,
+      "average_speed": 46.0,
+      "p85_speed": 65.5,
+      "free_flow_speed": 50.2,
+      "peak_hour_speed": 43.2,
+      "congestion_speed_drop_pct": 13.9,
+      "sample_volume": 2697634,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/08/18",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 0.62756,
+      "longitude": 33.5143
+    },
+    "U0004": {
+      "site_code": "U0004",
+      "name": "Buwama - Lukaya ATC Sensor",
+      "road_section": "Buwama - Lukaya",
+      "link_id": "A002_Link04",
+      "corridor": "Kampala - Masaka Highway (A002)",
+      "region": "Central / South-Western",
+      "maintenance_station": "Mpigi",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 80,
+      "average_speed": 59.2,
+      "p85_speed": 82.0,
+      "free_flow_speed": 54.2,
+      "peak_hour_speed": 58.9,
+      "congestion_speed_drop_pct": -8.7,
+      "sample_volume": 1899619,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/08/21",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 0.01665,
+      "longitude": 32.05515
+    },
+    "U0005": {
+      "site_code": "U0005",
+      "name": "Ishaka - Kizinda - Rugazi ATC Sensor",
+      "road_section": "Ishaka - Kizinda - Rugazi",
+      "link_id": "B152_Link03",
+      "corridor": "Ishaka - Katunguru Corridor (B152)",
+      "region": "Western",
+      "maintenance_station": "Mbarara",
+      "road_class": "B",
+      "surface": "Bituminous",
+      "posted_speed_limit": 70,
+      "average_speed": 48.7,
+      "p85_speed": 67.4,
+      "free_flow_speed": 51.0,
+      "peak_hour_speed": 48.5,
+      "congestion_speed_drop_pct": 4.9,
+      "sample_volume": 1109742,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/08/22",
+      "last_recorded_date": "2026/02/19",
+      "latitude": -0.52679,
+      "longitude": 30.1236
+    },
+    "U0006": {
+      "site_code": "U0006",
+      "name": "Kayunga - Kangulumira ATC Sensor",
+      "road_section": "Kayunga - Kangulumira",
+      "link_id": "B101_Link01",
+      "corridor": "Mukono - Kayunga Corridor (B101)",
+      "region": "Central",
+      "maintenance_station": "Mukono",
+      "road_class": "B",
+      "surface": "Bituminous",
+      "posted_speed_limit": 70,
+      "average_speed": 53.2,
+      "p85_speed": 80.4,
+      "free_flow_speed": 60.3,
+      "peak_hour_speed": 52.2,
+      "congestion_speed_drop_pct": 13.4,
+      "sample_volume": 1133908,
+      "speed_limit_compliance_pct": 99.5,
+      "first_recorded_date": "2025/09/20",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 0.68051,
+      "longitude": 32.92356
+    },
+    "U0007": {
+      "site_code": "U0007",
+      "name": "Kamdini - Minakulu ATC Sensor",
+      "road_section": "Kamdini - Minakulu",
+      "link_id": "A006_Link10",
+      "corridor": "Karuma - Gulu Highway (A006)",
+      "region": "Northern",
+      "maintenance_station": "Gulu",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 80,
+      "average_speed": 56.3,
+      "p85_speed": 86.0,
+      "free_flow_speed": 62.8,
+      "peak_hour_speed": 54.3,
+      "congestion_speed_drop_pct": 13.5,
+      "sample_volume": 446300,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/11/26",
+      "last_recorded_date": "2026/02/27",
+      "latitude": 2.25441,
+      "longitude": 32.34248
+    },
+    "U0008": {
+      "site_code": "U0008",
+      "name": "Pakwach - Nebbi ATC Sensor",
+      "road_section": "Pakwach - Nebbi",
+      "link_id": "A008_Link03",
+      "corridor": "West Nile Corridor (A008)",
+      "region": "Northern / West Nile",
+      "maintenance_station": "Arua",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 80,
+      "average_speed": 62.0,
+      "p85_speed": 91.9,
+      "free_flow_speed": 62.8,
+      "peak_hour_speed": 60.5,
+      "congestion_speed_drop_pct": 3.7,
+      "sample_volume": 188499,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/10/20",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 2.42511,
+      "longitude": 31.24403
+    },
+    "U0009": {
+      "site_code": "U0009",
+      "name": "Kampala - Mityana ATC Sensor",
+      "road_section": "Kampala - Mityana",
+      "link_id": "A005_Link01",
+      "corridor": "Kampala - Fort Portal Highway (A005)",
+      "region": "Central",
+      "maintenance_station": "Kampala",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 80,
+      "average_speed": 59.7,
+      "p85_speed": 85.5,
+      "free_flow_speed": 62.6,
+      "peak_hour_speed": 58.9,
+      "congestion_speed_drop_pct": 5.9,
+      "sample_volume": 1174678,
+      "speed_limit_compliance_pct": 100.0,
+      "first_recorded_date": "2025/10/24",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 0.38527,
+      "longitude": 32.10109
+    },
+    "U0010": {
+      "site_code": "U0010",
+      "name": "Zana - Kisubi ATC Sensor",
+      "road_section": "Zana - Kisubi (Entebbe Road)",
+      "link_id": "A004_Link01",
+      "corridor": "Kampala - Entebbe Old Highway (A004)",
+      "region": "Central",
+      "maintenance_station": "Entebbe",
+      "road_class": "A",
+      "surface": "Bituminous",
+      "posted_speed_limit": 60,
+      "average_speed": 52.1,
+      "p85_speed": 79.5,
+      "free_flow_speed": 64.8,
+      "peak_hour_speed": 47.9,
+      "congestion_speed_drop_pct": 26.1,
+      "sample_volume": 2062473,
+      "speed_limit_compliance_pct": 77.8,
+      "first_recorded_date": "2025/11/28",
+      "last_recorded_date": "2026/02/24",
+      "latitude": 0.1189,
+      "longitude": 32.52938
+    }
+  },
   "site_and_direction": [
     {
       "Site Code": "U0001",
+      "Site Name": "Luwero - Nakasongola ATC Sensor",
       "Direction": 1,
-      "Hours": 5361,
-      "First Day": "2025-07-13",
-      "Last Day": "2026-02-24",
-      "Vehicles": 1848412.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 68.0,
-      "Volume Weighted Average Speed (km/h)": 51.2
+      "Direction Name": "Direction 1 (Inbound / Luwero)",
+      "Hours": 5373,
+      "First Day": "2025/07/13",
+      "Last Day": "2026/02/24",
+      "Vehicles": 1851294,
+      "Median of Hourly 85th Percentile Speed (km/h)": 73.0,
+      "Volume Weighted Average Speed (km/h)": 52.1
     },
     {
       "Site Code": "U0001",
+      "Site Name": "Luwero - Nakasongola ATC Sensor",
       "Direction": 2,
-      "Hours": 5361,
-      "First Day": "2025-07-13",
-      "Last Day": "2026-02-24",
-      "Vehicles": 1841996.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 66.0,
-      "Volume Weighted Average Speed (km/h)": 50.2
-    },
-    {
-      "Site Code": "U0002",
-      "Direction": 1,
-      "Hours": 4289,
-      "First Day": "2025-08-18",
-      "Last Day": "2026-02-24",
-      "Vehicles": 3051142.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 53.0,
-      "Volume Weighted Average Speed (km/h)": 42.8
-    },
-    {
-      "Site Code": "U0002",
-      "Direction": 2,
-      "Hours": 4289,
-      "First Day": "2025-08-18",
-      "Last Day": "2026-02-24",
-      "Vehicles": 2555546.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 52.0,
-      "Volume Weighted Average Speed (km/h)": 41.4
-    },
-    {
-      "Site Code": "U0003",
-      "Direction": 1,
-      "Hours": 4001,
-      "First Day": "2025-08-18",
-      "Last Day": "2026-02-24",
-      "Vehicles": 1309456.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 62.0,
-      "Volume Weighted Average Speed (km/h)": 45.5
-    },
-    {
-      "Site Code": "U0003",
-      "Direction": 2,
-      "Hours": 4001,
-      "First Day": "2025-08-18",
-      "Last Day": "2026-02-24",
-      "Vehicles": 1381379.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 58.0,
-      "Volume Weighted Average Speed (km/h)": 46.4
-    },
-    {
-      "Site Code": "U0004",
-      "Direction": 1,
-      "Hours": 3488,
-      "First Day": "2025-08-21",
-      "Last Day": "2026-02-24",
-      "Vehicles": 959169.0,
+      "Direction Name": "Direction 2 (Outbound / Nakasongola)",
+      "Hours": 5372,
+      "First Day": "2025/07/13",
+      "Last Day": "2026/02/24",
+      "Vehicles": 1844387,
       "Median of Hourly 85th Percentile Speed (km/h)": 72.0,
-      "Volume Weighted Average Speed (km/h)": 56.0
+      "Volume Weighted Average Speed (km/h)": 50.9
+    },
+    {
+      "Site Code": "U0002",
+      "Site Name": "Kampala - Mukono ATC Sensor",
+      "Direction": 1,
+      "Direction Name": "Direction 1 (Inbound / Kampala)",
+      "Hours": 4309,
+      "First Day": "2025/08/18",
+      "Last Day": "2026/02/24",
+      "Vehicles": 3060738,
+      "Median of Hourly 85th Percentile Speed (km/h)": 67.0,
+      "Volume Weighted Average Speed (km/h)": 43.6
+    },
+    {
+      "Site Code": "U0002",
+      "Site Name": "Kampala - Mukono ATC Sensor",
+      "Direction": 2,
+      "Direction Name": "Direction 2 (Outbound / Mukono)",
+      "Hours": 4309,
+      "First Day": "2025/08/18",
+      "Last Day": "2026/02/24",
+      "Vehicles": 2563533,
+      "Median of Hourly 85th Percentile Speed (km/h)": 63.0,
+      "Volume Weighted Average Speed (km/h)": 41.0
+    },
+    {
+      "Site Code": "U0003",
+      "Site Name": "Iganga - Nakalama ATC Sensor",
+      "Direction": 1,
+      "Direction Name": "Direction 1 (Inbound / Iganga)",
+      "Hours": 4014,
+      "First Day": "2025/08/18",
+      "Last Day": "2026/02/24",
+      "Vehicles": 1312738,
+      "Median of Hourly 85th Percentile Speed (km/h)": 69.0,
+      "Volume Weighted Average Speed (km/h)": 47.0
+    },
+    {
+      "Site Code": "U0003",
+      "Site Name": "Iganga - Nakalama ATC Sensor",
+      "Direction": 2,
+      "Direction Name": "Direction 2 (Outbound / Nakalama)",
+      "Hours": 4014,
+      "First Day": "2025/08/18",
+      "Last Day": "2026/02/24",
+      "Vehicles": 1384896,
+      "Median of Hourly 85th Percentile Speed (km/h)": 63.9,
+      "Volume Weighted Average Speed (km/h)": 46.7
     },
     {
       "Site Code": "U0004",
+      "Site Name": "Buwama - Lukaya ATC Sensor",
+      "Direction": 1,
+      "Direction Name": "Direction 1 (Inbound / Buwama)",
+      "Hours": 3500,
+      "First Day": "2025/08/21",
+      "Last Day": "2026/02/24",
+      "Vehicles": 960420,
+      "Median of Hourly 85th Percentile Speed (km/h)": 76.0,
+      "Volume Weighted Average Speed (km/h)": 55.1
+    },
+    {
+      "Site Code": "U0004",
+      "Site Name": "Buwama - Lukaya ATC Sensor",
       "Direction": 2,
-      "Hours": 3488,
-      "First Day": "2025-08-21",
-      "Last Day": "2026-02-24",
-      "Vehicles": 937987.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 80.0,
+      "Direction Name": "Direction 2 (Outbound / Lukaya)",
+      "Hours": 3499,
+      "First Day": "2025/08/21",
+      "Last Day": "2026/02/24",
+      "Vehicles": 939199,
+      "Median of Hourly 85th Percentile Speed (km/h)": 89.0,
+      "Volume Weighted Average Speed (km/h)": 61.5
+    },
+    {
+      "Site Code": "U0005",
+      "Site Name": "Ishaka - Kizinda - Rugazi ATC Sensor",
+      "Direction": 1,
+      "Direction Name": "Direction 1 (Inbound / Ishaka)",
+      "Hours": 3056,
+      "First Day": "2025/08/22",
+      "Last Day": "2026/02/19",
+      "Vehicles": 552837,
+      "Median of Hourly 85th Percentile Speed (km/h)": 64.0,
+      "Volume Weighted Average Speed (km/h)": 47.4
+    },
+    {
+      "Site Code": "U0005",
+      "Site Name": "Ishaka - Kizinda - Rugazi ATC Sensor",
+      "Direction": 2,
+      "Direction Name": "Direction 2 (Outbound / Rugazi)",
+      "Hours": 3056,
+      "First Day": "2025/08/22",
+      "Last Day": "2026/02/19",
+      "Vehicles": 556905,
+      "Median of Hourly 85th Percentile Speed (km/h)": 72.0,
+      "Volume Weighted Average Speed (km/h)": 50.9
+    },
+    {
+      "Site Code": "U0006",
+      "Site Name": "Kayunga - Kangulumira ATC Sensor",
+      "Direction": 1,
+      "Direction Name": "Direction 1 (Inbound / Kayunga)",
+      "Hours": 2565,
+      "First Day": "2025/09/20",
+      "Last Day": "2026/02/24",
+      "Vehicles": 566079,
+      "Median of Hourly 85th Percentile Speed (km/h)": 84.0,
+      "Volume Weighted Average Speed (km/h)": 56.3
+    },
+    {
+      "Site Code": "U0006",
+      "Site Name": "Kayunga - Kangulumira ATC Sensor",
+      "Direction": 2,
+      "Direction Name": "Direction 2 (Outbound / Kangulumira)",
+      "Hours": 2566,
+      "First Day": "2025/09/20",
+      "Last Day": "2026/02/24",
+      "Vehicles": 567829,
+      "Median of Hourly 85th Percentile Speed (km/h)": 79.9,
+      "Volume Weighted Average Speed (km/h)": 53.3
+    },
+    {
+      "Site Code": "U0007",
+      "Site Name": "Kamdini - Minakulu ATC Sensor",
+      "Direction": 1,
+      "Direction Name": "Direction 1 (Inbound / Kamdini)",
+      "Hours": 2233,
+      "First Day": "2025/11/26",
+      "Last Day": "2026/02/27",
+      "Vehicles": 224828,
+      "Median of Hourly 85th Percentile Speed (km/h)": 85.0,
+      "Volume Weighted Average Speed (km/h)": 56.1
+    },
+    {
+      "Site Code": "U0007",
+      "Site Name": "Kamdini - Minakulu ATC Sensor",
+      "Direction": 2,
+      "Direction Name": "Direction 2 (Outbound / Minakulu)",
+      "Hours": 2232,
+      "First Day": "2025/11/26",
+      "Last Day": "2026/02/27",
+      "Vehicles": 221472,
+      "Median of Hourly 85th Percentile Speed (km/h)": 90.0,
+      "Volume Weighted Average Speed (km/h)": 58.4
+    },
+    {
+      "Site Code": "U0008",
+      "Site Name": "Pakwach - Nebbi ATC Sensor",
+      "Direction": 1,
+      "Direction Name": "Direction 1 (Inbound / Pakwach)",
+      "Hours": 2151,
+      "First Day": "2025/10/20",
+      "Last Day": "2026/02/24",
+      "Vehicles": 96862,
+      "Median of Hourly 85th Percentile Speed (km/h)": 92.9,
+      "Volume Weighted Average Speed (km/h)": 60.1
+    },
+    {
+      "Site Code": "U0008",
+      "Site Name": "Pakwach - Nebbi ATC Sensor",
+      "Direction": 2,
+      "Direction Name": "Direction 2 (Outbound / Nebbi)",
+      "Hours": 2146,
+      "First Day": "2025/10/20",
+      "Last Day": "2026/02/24",
+      "Vehicles": 91637,
+      "Median of Hourly 85th Percentile Speed (km/h)": 96.9,
       "Volume Weighted Average Speed (km/h)": 62.6
     },
     {
-      "Site Code": "U0005",
+      "Site Code": "U0009",
+      "Site Name": "Kampala - Mityana ATC Sensor",
       "Direction": 1,
-      "Hours": 3037,
-      "First Day": "2025-08-22",
-      "Last Day": "2026-02-19",
-      "Vehicles": 550563.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 60.0,
-      "Volume Weighted Average Speed (km/h)": 47.1
-    },
-    {
-      "Site Code": "U0005",
-      "Direction": 2,
-      "Hours": 3038,
-      "First Day": "2025-08-22",
-      "Last Day": "2026-02-19",
-      "Vehicles": 554849.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 67.0,
-      "Volume Weighted Average Speed (km/h)": 50.2
-    },
-    {
-      "Site Code": "U0006",
-      "Direction": 1,
-      "Hours": 2558,
-      "First Day": "2025-09-20",
-      "Last Day": "2026-02-24",
-      "Vehicles": 565269.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 76.0,
-      "Volume Weighted Average Speed (km/h)": 54.1
-    },
-    {
-      "Site Code": "U0006",
-      "Direction": 2,
-      "Hours": 2560,
-      "First Day": "2025-09-20",
-      "Last Day": "2026-02-24",
-      "Vehicles": 567110.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 72.0,
-      "Volume Weighted Average Speed (km/h)": 52.3
-    },
-    {
-      "Site Code": "U0007",
-      "Direction": 1,
-      "Hours": 2229,
-      "First Day": "2025-11-26",
-      "Last Day": "2026-02-27",
-      "Vehicles": 224539.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 77.0,
-      "Volume Weighted Average Speed (km/h)": 55.2
-    },
-    {
-      "Site Code": "U0007",
-      "Direction": 2,
-      "Hours": 2228,
-      "First Day": "2025-11-26",
-      "Last Day": "2026-02-27",
-      "Vehicles": 221225.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 81.0,
-      "Volume Weighted Average Speed (km/h)": 57.5
-    },
-    {
-      "Site Code": "U0008",
-      "Direction": 1,
-      "Hours": 2146,
-      "First Day": "2025-10-20",
-      "Last Day": "2026-02-24",
-      "Vehicles": 96743.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 83.0,
-      "Volume Weighted Average Speed (km/h)": 60.2
-    },
-    {
-      "Site Code": "U0008",
-      "Direction": 2,
-      "Hours": 2141,
-      "First Day": "2025-10-20",
-      "Last Day": "2026-02-24",
-      "Vehicles": 91544.0,
+      "Direction Name": "Direction 1 (Inbound / Kampala)",
+      "Hours": 2932,
+      "First Day": "2025/10/24",
+      "Last Day": "2026/02/24",
+      "Vehicles": 596990,
       "Median of Hourly 85th Percentile Speed (km/h)": 87.0,
-      "Volume Weighted Average Speed (km/h)": 63.9
+      "Volume Weighted Average Speed (km/h)": 60.4
     },
     {
       "Site Code": "U0009",
+      "Site Name": "Kampala - Mityana ATC Sensor",
+      "Direction": 2,
+      "Direction Name": "Direction 2 (Outbound / Mityana)",
+      "Hours": 2932,
+      "First Day": "2025/10/24",
+      "Last Day": "2026/02/24",
+      "Vehicles": 577688,
+      "Median of Hourly 85th Percentile Speed (km/h)": 86.0,
+      "Volume Weighted Average Speed (km/h)": 60.0
+    },
+    {
+      "Site Code": "U0010",
+      "Site Name": "Zana - Kisubi ATC Sensor",
       "Direction": 1,
-      "Hours": 2925,
-      "First Day": "2025-10-24",
-      "Last Day": "2026-02-24",
-      "Vehicles": 596209.0,
+      "Direction Name": "Direction 1 (Inbound / Zana)",
+      "Hours": 2091,
+      "First Day": "2025/11/28",
+      "Last Day": "2026/02/24",
+      "Vehicles": 1030404,
       "Median of Hourly 85th Percentile Speed (km/h)": 81.0,
-      "Volume Weighted Average Speed (km/h)": 59.4
-    },
-    {
-      "Site Code": "U0009",
-      "Direction": 2,
-      "Hours": 2925,
-      "First Day": "2025-10-24",
-      "Last Day": "2026-02-24",
-      "Vehicles": 576917.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 80.0,
-      "Volume Weighted Average Speed (km/h)": 59.9
+      "Volume Weighted Average Speed (km/h)": 55.7
     },
     {
       "Site Code": "U0010",
-      "Direction": 1,
-      "Hours": 2086,
-      "First Day": "2025-11-28",
-      "Last Day": "2026-02-24",
-      "Vehicles": 1028832.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 64.0,
-      "Volume Weighted Average Speed (km/h)": 53.0
-    },
-    {
-      "Site Code": "U0010",
+      "Site Name": "Zana - Kisubi ATC Sensor",
       "Direction": 2,
-      "Hours": 2086,
-      "First Day": "2025-11-28",
-      "Last Day": "2026-02-24",
-      "Vehicles": 1030472.0,
-      "Median of Hourly 85th Percentile Speed (km/h)": 62.0,
-      "Volume Weighted Average Speed (km/h)": 51.2
+      "Direction Name": "Direction 2 (Outbound / Kisubi (Entebbe Road))",
+      "Hours": 2091,
+      "First Day": "2025/11/28",
+      "Last Day": "2026/02/24",
+      "Vehicles": 1032069,
+      "Median of Hourly 85th Percentile Speed (km/h)": 77.0,
+      "Volume Weighted Average Speed (km/h)": 53.7
     }
   ],
   "stations_historical": [
@@ -652,116 +1238,784 @@
       "speed2017": 63.3
     }
   ],
-  "site_statistics": {
-    "U0001": {
-      "site_code": "U0001",
-      "average_speed": 51.5,
-      "p85_speed": 67.2,
-      "free_flow_speed": 53.9,
-      "peak_hour_speed": 48.2,
-      "congestion_speed_drop_pct": 10.6,
-      "sample_volume": 3690408,
-      "posted_speed_limit": 80,
-      "speed_limit_compliance_pct": 100.0
-    },
-    "U0002": {
-      "site_code": "U0002",
-      "average_speed": 42.3,
-      "p85_speed": 53.7,
-      "free_flow_speed": 48.5,
-      "peak_hour_speed": 36.8,
-      "congestion_speed_drop_pct": 24.1,
-      "sample_volume": 5606688,
-      "posted_speed_limit": 50,
-      "speed_limit_compliance_pct": 82.8
-    },
-    "U0003": {
-      "site_code": "U0003",
-      "average_speed": 46.9,
-      "p85_speed": 60.2,
-      "free_flow_speed": 49.2,
-      "peak_hour_speed": 42.8,
-      "congestion_speed_drop_pct": 13.0,
-      "sample_volume": 2690835,
-      "posted_speed_limit": 80,
-      "speed_limit_compliance_pct": 100.0
-    },
-    "U0004": {
-      "site_code": "U0004",
-      "average_speed": 58.3,
-      "p85_speed": 75.1,
-      "free_flow_speed": 54.8,
-      "peak_hour_speed": 57.2,
-      "congestion_speed_drop_pct": -4.4,
-      "sample_volume": 1897156,
-      "posted_speed_limit": 100,
-      "speed_limit_compliance_pct": 100.0
-    },
-    "U0005": {
-      "site_code": "U0005",
-      "average_speed": 49.2,
-      "p85_speed": 63.9,
-      "free_flow_speed": 49.9,
-      "peak_hour_speed": 47.9,
-      "congestion_speed_drop_pct": 4.0,
-      "sample_volume": 1105412,
-      "posted_speed_limit": 50,
-      "speed_limit_compliance_pct": 64.8
-    },
-    "U0006": {
-      "site_code": "U0006",
-      "average_speed": 54.8,
-      "p85_speed": 74.9,
-      "free_flow_speed": 58.3,
-      "peak_hour_speed": 52.3,
-      "congestion_speed_drop_pct": 10.3,
-      "sample_volume": 1132379,
-      "posted_speed_limit": 80,
-      "speed_limit_compliance_pct": 99.9
-    },
-    "U0007": {
-      "site_code": "U0007",
-      "average_speed": 57.2,
-      "p85_speed": 79.0,
-      "free_flow_speed": 60.3,
-      "peak_hour_speed": 54.7,
-      "congestion_speed_drop_pct": 9.3,
-      "sample_volume": 445764,
-      "posted_speed_limit": 80,
-      "speed_limit_compliance_pct": 99.9
-    },
-    "U0008": {
-      "site_code": "U0008",
-      "average_speed": 61.3,
-      "p85_speed": 83.5,
-      "free_flow_speed": 60.2,
-      "peak_hour_speed": 60.5,
-      "congestion_speed_drop_pct": -0.5,
-      "sample_volume": 188287,
-      "posted_speed_limit": 80,
-      "speed_limit_compliance_pct": 99.7
-    },
-    "U0009": {
-      "site_code": "U0009",
-      "average_speed": 60.2,
-      "p85_speed": 80.1,
-      "free_flow_speed": 61.4,
-      "peak_hour_speed": 57.0,
-      "congestion_speed_drop_pct": 7.2,
-      "sample_volume": 1173126,
-      "posted_speed_limit": 50,
-      "speed_limit_compliance_pct": 1.3
-    },
-    "U0010": {
-      "site_code": "U0010",
-      "average_speed": 54.7,
-      "p85_speed": 66.8,
-      "free_flow_speed": 61.2,
-      "peak_hour_speed": 48.2,
-      "congestion_speed_drop_pct": 21.2,
-      "sample_volume": 2059304,
-      "posted_speed_limit": 50,
-      "speed_limit_compliance_pct": 22.2
-    }
+  "monthly_station_speeds": {
+    "IBANDA-KAMWENGE": [
+      {
+        "month": "JAN",
+        "speed": 36.1
+      },
+      {
+        "month": "FEB",
+        "speed": 42.5
+      },
+      {
+        "month": "MAR",
+        "speed": 35.8
+      },
+      {
+        "month": "APR",
+        "speed": 35.3
+      },
+      {
+        "month": "MAY",
+        "speed": 42.3
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "KYENJOJO-FORTPORTAL": [
+      {
+        "month": "JAN",
+        "speed": null
+      },
+      {
+        "month": "FEB",
+        "speed": 52.7
+      },
+      {
+        "month": "MAR",
+        "speed": null
+      },
+      {
+        "month": "APR",
+        "speed": 53.9
+      },
+      {
+        "month": "MAY",
+        "speed": 52.6
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "ISHAKA-KATUNGURU": [
+      {
+        "month": "JAN",
+        "speed": null
+      },
+      {
+        "month": "FEB",
+        "speed": null
+      },
+      {
+        "month": "MAR",
+        "speed": null
+      },
+      {
+        "month": "APR",
+        "speed": 50.4
+      },
+      {
+        "month": "MAY",
+        "speed": 50.8
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "LYANTONDE-NTUSI": [
+      {
+        "month": "JAN",
+        "speed": 16.2
+      },
+      {
+        "month": "FEB",
+        "speed": 15.4
+      },
+      {
+        "month": "MAR",
+        "speed": 18.0
+      },
+      {
+        "month": "APR",
+        "speed": 17.5
+      },
+      {
+        "month": "MAY",
+        "speed": 22.3
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "BUWAMA-LUKAYA": [
+      {
+        "month": "JAN",
+        "speed": null
+      },
+      {
+        "month": "FEB",
+        "speed": 57.1
+      },
+      {
+        "month": "MAR",
+        "speed": 56.2
+      },
+      {
+        "month": "APR",
+        "speed": null
+      },
+      {
+        "month": "MAY",
+        "speed": null
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": 56.7
+      },
+      {
+        "month": "SEP",
+        "speed": 58.8
+      },
+      {
+        "month": "OCT",
+        "speed": 58.5
+      },
+      {
+        "month": "NOV",
+        "speed": 58.8
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "KASANGATI-KYALIWAJALA": [
+      {
+        "month": "JAN",
+        "speed": null
+      },
+      {
+        "month": "FEB",
+        "speed": 27.4
+      },
+      {
+        "month": "MAR",
+        "speed": 22.5
+      },
+      {
+        "month": "APR",
+        "speed": null
+      },
+      {
+        "month": "MAY",
+        "speed": null
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": 32.6
+      },
+      {
+        "month": "SEP",
+        "speed": 28.5
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": 20.6
+      },
+      {
+        "month": "DEC",
+        "speed": 21.2
+      }
+    ],
+    "KAMPALA-MUKONO": [
+      {
+        "month": "JAN",
+        "speed": 26.1
+      },
+      {
+        "month": "FEB",
+        "speed": 24.7
+      },
+      {
+        "month": "MAR",
+        "speed": null
+      },
+      {
+        "month": "APR",
+        "speed": null
+      },
+      {
+        "month": "MAY",
+        "speed": null
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "MUKONO-KALAGI": [
+      {
+        "month": "JAN",
+        "speed": 64.8
+      },
+      {
+        "month": "FEB",
+        "speed": 65.7
+      },
+      {
+        "month": "MAR",
+        "speed": 65.8
+      },
+      {
+        "month": "APR",
+        "speed": 61.2
+      },
+      {
+        "month": "MAY",
+        "speed": 52.3
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "NJERU-BUKOLOTO": [
+      {
+        "month": "JAN",
+        "speed": 38.4
+      },
+      {
+        "month": "FEB",
+        "speed": 39.2
+      },
+      {
+        "month": "MAR",
+        "speed": 36.3
+      },
+      {
+        "month": "APR",
+        "speed": 33.6
+      },
+      {
+        "month": "MAY",
+        "speed": 33.8
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "TIRINYI-KAMONKOLI": [
+      {
+        "month": "JAN",
+        "speed": 52.0
+      },
+      {
+        "month": "FEB",
+        "speed": 58.6
+      },
+      {
+        "month": "MAR",
+        "speed": 60.1
+      },
+      {
+        "month": "APR",
+        "speed": 50.6
+      },
+      {
+        "month": "MAY",
+        "speed": 50.9
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "PALISA-KANYAGO": [
+      {
+        "month": "JAN",
+        "speed": 22.7
+      },
+      {
+        "month": "FEB",
+        "speed": 23.0
+      },
+      {
+        "month": "MAR",
+        "speed": 20.9
+      },
+      {
+        "month": "APR",
+        "speed": 24.9
+      },
+      {
+        "month": "MAY",
+        "speed": 23.0
+      },
+      {
+        "month": "JUN",
+        "speed": 22.8
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "KUMI-BROOKS CORNER": [
+      {
+        "month": "JAN",
+        "speed": 40.4
+      },
+      {
+        "month": "FEB",
+        "speed": 34.2
+      },
+      {
+        "month": "MAR",
+        "speed": 34.5
+      },
+      {
+        "month": "APR",
+        "speed": 26.2
+      },
+      {
+        "month": "MAY",
+        "speed": 26.5
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "LIRA-CORNER KILAK": [
+      {
+        "month": "JAN",
+        "speed": 25.9
+      },
+      {
+        "month": "FEB",
+        "speed": 27.3
+      },
+      {
+        "month": "MAR",
+        "speed": 28.9
+      },
+      {
+        "month": "APR",
+        "speed": 30.5
+      },
+      {
+        "month": "MAY",
+        "speed": 35.3
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "LAMOGI-AMURU": [
+      {
+        "month": "JAN",
+        "speed": 34.2
+      },
+      {
+        "month": "FEB",
+        "speed": 34.2
+      },
+      {
+        "month": "MAR",
+        "speed": 28.8
+      },
+      {
+        "month": "APR",
+        "speed": 26.7
+      },
+      {
+        "month": "MAY",
+        "speed": 27.5
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ],
+    "NEBBI-OLEVU": [
+      {
+        "month": "JAN",
+        "speed": 50.5
+      },
+      {
+        "month": "FEB",
+        "speed": 56.9
+      },
+      {
+        "month": "MAR",
+        "speed": 56.0
+      },
+      {
+        "month": "APR",
+        "speed": 57.5
+      },
+      {
+        "month": "MAY",
+        "speed": 55.1
+      },
+      {
+        "month": "JUN",
+        "speed": null
+      },
+      {
+        "month": "JUL",
+        "speed": null
+      },
+      {
+        "month": "AUG",
+        "speed": null
+      },
+      {
+        "month": "SEP",
+        "speed": null
+      },
+      {
+        "month": "OCT",
+        "speed": null
+      },
+      {
+        "month": "NOV",
+        "speed": null
+      },
+      {
+        "month": "DEC",
+        "speed": null
+      }
+    ]
+  },
+  "vehicle_class_speeds": {
+    "PALISA-KANYAGO": [
+      {
+        "class": "Mortocycles/bicycles",
+        "average_speed": 18.4
+      },
+      {
+        "class": "Saloon cars",
+        "average_speed": 26.8
+      },
+      {
+        "class": "Minibuses/matatus/Pickups/Vans/4WD",
+        "average_speed": 34.9
+      },
+      {
+        "class": "Medium buses/Light single unit truck",
+        "average_speed": 31.8
+      },
+      {
+        "class": "Buses/medium - large unit Trucks",
+        "average_speed": 30.0
+      },
+      {
+        "class": "Trailers",
+        "average_speed": 24.8
+      }
+    ]
   }
 }
