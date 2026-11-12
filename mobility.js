@@ -343,12 +343,52 @@
     $('search').value = ''; areaBounds = null; areaStart = null; $('draw-area').setAttribute('aria-pressed', 'false'); if (area) { area.remove(); area = null; }
     render(true);
   }
+  let roadLayer = null;
+  function roadStyle(feature) {
+    const p = feature.properties || {};
+    const isPaved = String(p.surface || '').toLowerCase() === 'bituminous' || String(p.surface || '').toLowerCase() === 'paved';
+    const z = map ? map.getZoom() : 7;
+    const roadScale = z <= 7 ? 1.0 : Math.min(3.2, 1.0 + Math.max(0, z - 7) * 0.35);
+    return {
+      color: isPaved ? '#041525' : '#e65100',
+      weight: (isPaved ? 2.8 : 1.4) * roadScale,
+      opacity: isPaved ? 0.95 : 0.85,
+    };
+  }
+  function updateZoomScale() {
+    if (!map) return;
+    const z = map.getZoom();
+    const scale = z <= 7 ? 0.25 : Math.min(1.25, 0.25 + Math.pow(Math.max(0, z - 7), 1.25) * 0.14);
+    const roadScale = z <= 7 ? 1.0 : Math.min(3.2, 1.0 + Math.max(0, z - 7) * 0.35);
+    document.documentElement.style.setProperty('--pin-zoom-scale', scale.toFixed(3));
+    const container = map.getContainer();
+    if (container) {
+      container.style.setProperty('--pin-zoom-scale', scale.toFixed(3));
+      container.style.setProperty('--road-scale', roadScale.toFixed(2));
+    }
+    if (roadLayer) {
+      roadLayer.setStyle(roadStyle);
+    }
+  }
   function initMap() {
     if (!window.L) { $('map-status').textContent = 'Map library unavailable. Filters, charts and exports remain available.'; return; }
     map = L.map('map', { preferCanvas: true, zoomControl: true }).setView([1.35, 32.3], 7);
     tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+    fetch('road_network.geojson').then(r => r.json()).then(data => {
+      roadLayer = L.geoJSON(data, {
+        style: roadStyle,
+        onEachFeature: (feature, layer) => {
+          const p = feature.properties || {};
+          layer.bindPopup(`<strong>${p.link_name || p.road || 'Road Link'}</strong><br>${p.surface || 'Paved'} &bull; ${p.length_km ? Number(p.length_km).toFixed(1) + ' km' : ''}`);
+        }
+      }).addTo(map);
+      roadLayer.bringToBack();
+      if (tiles) tiles.bringToBack();
+    }).catch(err => console.warn('Road network layer load skipped', err));
     markers = L.layerGroup().addTo(map);
-    map.on('zoomend', () => renderMap());
+    map.on('zoom', updateZoomScale);
+    map.on('zoomend', () => { updateZoomScale(); renderMap(); });
+    updateZoomScale();
     map.on('click', event => {
       if ($('draw-area').getAttribute('aria-pressed') !== 'true') return;
       if (!areaStart) { areaStart = event.latlng; $('map-status').textContent = 'Select the opposite corner of the area.'; return; }

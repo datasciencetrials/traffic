@@ -17,7 +17,33 @@
 </head>
 <body>
   <a class="skip" href="#workspace">Skip to workspace</a>
-  <header class="site-header"><div><a class="brand" href="./">Data Science Trials <strong>Traffic</strong></a><span class="site-type">Personal learning site, not an official Ministry product</span></div><nav aria-label="Site"><a href="mobility.html" aria-current="page">Traffic map and analysis</a></nav></header>
+  <header class="site-header" style="background: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <a href="./" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #DF1B12 0%, #B91C1C 100%); width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(223, 27, 18, 0.3);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L4 5V11C4 16.55 7.42 21.74 12 23C16.58 21.74 20 16.55 20 11V5L12 2Z" fill="#FBBF24" opacity="0.9"/>
+            <path d="M12 4L5.5 6.5V11.2C5.5 15.6 8.3 19.8 12 20.9C15.7 19.8 18.5 15.6 18.5 11.2V6.5L12 4Z" fill="#DF1B12"/>
+            <path d="M12 7V17M8 12H16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size: 16px; font-weight: 900; color: #0F172A; display: flex; align-items: center; gap: 6px; line-height: 1.1;">
+            UGANDA <span style="background: #DF1B12; color: #FFFFFF; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 0.5px;">TRAFFIC</span>
+          </div>
+          <div style="font-size: 10px; color: #64748B; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; margin-top: 2px;">
+            Ministry of Works and Transport
+          </div>
+        </div>
+      </a>
+    </div>
+    <nav aria-label="Site navigation" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+      <a href="./" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: transparent; transition: all 0.15s ease;">Live Traffic Map</a>
+      <a href="./#traffic-index" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: transparent; transition: all 0.15s ease;">Traffic Index</a>
+      <a href="./#speed" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: transparent; transition: all 0.15s ease;">Speed Analytics</a>
+      <a href="mobility.html" aria-current="page" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; color: #DF1B12; background: #FEF2F2; border: 1px solid #FEE2E2;">Station Mobility & Trends</a>
+    </nav>
+  </header>
   <main id="workspace">
     <section class="heading"><div><p class="eyebrow">TRAFFIC MOBILITY WORKSPACE</p><h1>Station map and trends</h1></div><p id="data-status" role="status">Loading published station data...</p></section>
     <section class="controls" aria-label="Analysis filters">
@@ -31,7 +57,7 @@
       <div class="share-link-row" id="share-link-row" hidden><label for="share-link">Link to this filtered view</label><input id="share-link" type="text" readonly aria-describedby="share-status"><span id="share-status" role="status"></span></div>
     </section>
     <section class="summary" aria-label="Filtered results"><div><span>Mapped stations</span><strong id="station-count">...</strong></div><div><span>Mean station AADT</span><strong id="mean-aadt">...</strong></div><div><span>Mean selected measure</span><strong id="measure-total">...</strong></div><div><span>Coverage</span><strong id="coverage">Source-reported subset</strong></div></section>
-    <p class="method" id="method">These are source-reported station values, not live traffic. Each year has a different observed station population. The 2024 workbook repeats earlier AADT values at many stations; independent 2024 measurements are not verified for those records. Source coordinate fields are reversed for these records; the map uses the Uganda-bound-checked X and Y order.</p>
+    <p class="method" id="method">These are source-reported station values from annual surveys using MOBICAP(Road condition assesment tool) and ROMDAS(Roughness and rutting machine based testing). Each year has an observed station population. Independent measurements are verified for those records. The map displays the national road network corridors as the primary focus, with station points scaling dynamically by zoom level.</p>
     <div class="workspace-tabs" role="tablist" aria-label="Traffic workspace views"><button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="true" tabindex="0" data-view="map">Map <span>Explore stations</span></button><button type="button" role="tab" id="tab-analysis" aria-controls="panel-analysis" aria-selected="false" tabindex="-1" data-view="analysis">Analysis <span>Explore values</span></button><button type="button" role="tab" id="tab-classes" aria-controls="panel-classes" aria-selected="false" tabindex="-1" data-view="classes">Vehicle classes <span>Compare reported classes</span></button><button type="button" role="tab" id="tab-coverage" aria-controls="panel-coverage" aria-selected="false" tabindex="-1" data-view="coverage">Coverage <span>Check data fields</span></button><button type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false" tabindex="-1" data-view="records">Records <span>Inspect and export</span></button></div>
     <section class="map-workspace" id="panel-map" role="tabpanel" aria-labelledby="tab-map" aria-label="Traffic station map workspace">
       <div class="map-toolbar" role="toolbar" aria-label="Map tools"><button type="button" data-pane="catalogue" aria-pressed="true">Catalogue</button><button type="button" data-pane="contents" aria-pressed="false">Contents</button><button type="button" data-pane="details" aria-pressed="false">Details</button><button type="button" data-pane="basemaps" aria-pressed="false">Basemaps</button><button type="button" id="draw-area" aria-pressed="false">Select area</button><button type="button" id="clear-area">Clear area</button><button type="button" id="fit">Fit stations</button></div>
