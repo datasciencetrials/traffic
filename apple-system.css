@@ -403,3 +403,89 @@ svg text {
   }
 }
 
+
+
+/* ==========================================================================
+   Apple HIG Universal Light Theme & Visibility Overrides
+   ========================================================================== */
+
+/* Responsive Navigation */
+nav,
+.nav,
+.top-nav,
+.subnav,
+.context-subnav,
+.capsule-nav,
+.tab-bar,
+.tabs-container {
+  overflow-x: auto !important;
+  flex-wrap: nowrap !important;
+  -webkit-overflow-scrolling: touch !important;
+  max-width: 100% !important;
+  scrollbar-width: none !important;
+}
+nav::-webkit-scrollbar,
+.subnav::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Plain White Panels & Cards */
+.card,
+.panel,
+.kpi,
+.kpi-card,
+.metric-card,
+.stat-card,
+.chart-card,
+.table-card,
+.widget,
+[class*="Card"],
+[class*="-card"] {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  border: 1px solid #E5E5EA !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Plain Tables */
+table,
+.data-table,
+.table-responsive {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+th {
+  background-color: #F8FAFC !important;
+  color: #111827 !important;
+  border-bottom: 2px solid #E5E5EA !important;
+  font-weight: 700 !important;
+}
+td {
+  color: #111827 !important;
+  border-bottom: 1px solid #F2F2F7 !important;
+}
+tr:hover td {
+  background-color: #F2F2F7 !important;
+}
+
+/* Vibrant Non-Neon Status Badges */
+.badge.critical, .condition-critical, [data-condition="Beyond Repair"], [data-condition="Critical"], [data-condition="Very Poor"] {
+  background-color: rgba(211, 47, 47, 0.1) !important;
+  color: #D32F2F !important;
+  border-color: rgba(211, 47, 47, 0.25) !important;
+}
+.badge.poor, .condition-poor, [data-condition="Poor"] {
+  background-color: rgba(234, 88, 12, 0.1) !important;
+  color: #EA580C !important;
+  border-color: rgba(234, 88, 12, 0.25) !important;
+}
+.badge.marginal, .badge.fair, .condition-marginal, [data-condition="Marginal"], [data-condition="Fair"] {
+  background-color: rgba(217, 119, 6, 0.1) !important;
+  color: #D97706 !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
+}
+.badge.satisfactory, .badge.good, .condition-good, [data-condition="Satisfactory"], [data-condition="Good"], [data-condition="Very Good"], [data-condition="Excellent"] {
+  background-color: rgba(21, 128, 61, 0.1) !important;
+  color: #15803D !important;
+  border-color: rgba(21, 128, 61, 0.25) !important;
+}
