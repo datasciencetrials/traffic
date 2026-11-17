@@ -586,3 +586,28 @@ table td, table th, .recharts-text, .recharts-cartesian-axis-tick text {
   transform: translateY(-2px) !important;
   box-shadow: 0 10px 24px rgba(0, 113, 227, 0.08) !important;
 }
+
+/* === TRAFFIC ANALYTICS APPLE LIGHT THEME ENFORCEMENT === */
+div[style*="rgba(2, 6, 15"], div[style*="rgba(2,6,15"] {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+div[style*="color: rgb(255, 255, 255)"], div[style*="color: #fff"] {
+  color: #0F172A !important;
+}
+.dense-grid > div {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+select[style*="rgba(0,240,255"], select[style*="rgba(0, 240, 255"] {
+  border: 1px solid #CBD5E1 !important;
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+}
+button[style*="EXIT FORECAST"] {
+  background: #FEF2F2 !important;
+  border: 1px solid #FCA5A5 !important;
+  color: #DC2626 !important;
+}
