@@ -16,7 +16,7 @@
     .surface-pill.paved{background:#e0f3ed;color:#125f49}
     .surface-pill.unpaved{background:#fff0d9;color:#784d08}
     .surface-pill.not-supplied{background:#e8edf1;color:#445964}
-    .site-sub{font-size:10px;color:#64748B;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;margin-top:2px}
+    .site-sub{font-size:10px;color:#64748B;font-weight:700;letter-spacing:0.2px;margin-top:2px}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
   <script src="mobility.js?v=20261111-classes" defer></script>
@@ -35,7 +35,7 @@
         </div>
         <div>
           <div style="font-size: 16px; font-weight: 900; color: #0F172A; display: flex; align-items: center; gap: 6px; line-height: 1.1;">
-            UGANDA <span style="background: #DF1B12; color: #FFFFFF; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 0.5px;">TRAFFIC</span>
+            Uganda <span style="background: #C83A34; color: #FFFFFF; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 800; letter-spacing: 0.2px;">Traffic</span>
           </div>
           <div class="site-sub">
             Data Science Trials • Traffic Intelligence
@@ -44,14 +44,13 @@
       </a>
     </div>
     <nav aria-label="Site navigation" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-      <a href="tomtom.html" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; transition: all 0.15s ease;">Live Traffic Map</a>
-      <a href="tomtom.html#traffic-index" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; transition: all 0.15s ease;">Traffic Index</a>
-      <a href="tomtom.html#speed" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; transition: all 0.15s ease;">Speed Analytics</a>
-      <a href="mobility.html" aria-current="page" style="padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; color: #DF1B12; background: #FEF2F2; border: 1px solid #FEE2E2;">Station Mobility & Trends</a>
+      <a href="tomtom.html" style="padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; color: #334155; background: #F8FAFC; border: 1px solid #D8DEE8; transition: all 0.15s ease;">Network map</a>
+      <a href="tomtom.html#speed" style="padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; color: #334155; background: #F8FAFC; border: 1px solid #D8DEE8; transition: all 0.15s ease;">Recorded speed</a>
+      <a href="mobility.html" aria-current="page" style="padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; color: #9F2F2A; background: #FFF1F0; border: 1px solid #F2C6C3;">Station mobility and trends</a>
     </nav>
   </header>
   <main id="workspace">
-    <section class="heading"><div><p class="eyebrow">TRAFFIC MOBILITY WORKSPACE</p><h1>Station map and trends</h1></div><p id="data-status" role="status">Loading published station data...</p></section>
+    <section class="heading"><div><p class="eyebrow">Traffic mobility workspace</p><h1>Station map and trends</h1></div><p id="data-status" role="status">Loading published station data...</p></section>
     <section class="controls" aria-label="Analysis filters">
       <label>Source year <select id="year"></select></label>
       <label>Measure <select id="metric"></select></label>
@@ -63,7 +62,7 @@
       <div class="share-link-row" id="share-link-row" hidden><label for="share-link">Link to this filtered view</label><input id="share-link" type="text" readonly aria-describedby="share-status"><span id="share-status" role="status"></span></div>
     </section>
     <section class="summary" aria-label="Filtered results"><div><span>Mapped stations</span><strong id="station-count">...</strong></div><div><span>Mean station AADT</span><strong id="mean-aadt">...</strong></div><div><span>Mean selected measure</span><strong id="measure-total">...</strong></div><div><span>Coverage</span><strong id="coverage">National Road Network Baseline</strong></div></section>
-    <p class="method" id="method">These are dated station values. The station population differs by year. The road network layer provides corridor geometry and chainage focus. Station points scale dynamically by zoom level. Continuous national traffic models project data through the years to the second.</p>
+    <p class="method" id="method">These are dated station observations, not live traffic. The station population differs by year. The road network layer provides corridor geometry and chainage focus. Station points scale dynamically by zoom level.</p>
     <div class="workspace-tabs" role="tablist" aria-label="Traffic workspace views"><button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="true" tabindex="0" data-view="map">Map <span>Explore stations</span></button><button type="button" role="tab" id="tab-analysis" aria-controls="panel-analysis" aria-selected="false" tabindex="-1" data-view="analysis">Analysis <span>Explore values</span></button><button type="button" role="tab" id="tab-classes" aria-controls="panel-classes" aria-selected="false" tabindex="-1" data-view="classes">Vehicle classes <span>Compare reported classes</span></button><button type="button" role="tab" id="tab-coverage" aria-controls="panel-coverage" aria-selected="false" tabindex="-1" data-view="coverage">Coverage <span>Check data fields</span></button><button type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false" tabindex="-1" data-view="records">Records <span>Inspect and export</span></button></div>
     <section class="map-workspace" id="panel-map" role="tabpanel" aria-labelledby="tab-map" aria-label="Traffic station map workspace">
       <div class="map-toolbar" role="toolbar" aria-label="Map tools"><button type="button" data-pane="catalogue" aria-pressed="true">Catalogue</button><button type="button" data-pane="contents" aria-pressed="false">Contents</button><button type="button" data-pane="details" aria-pressed="false">Details</button><button type="button" data-pane="basemaps" aria-pressed="false">Basemaps</button><button type="button" id="draw-area" aria-pressed="false">Select area</button><button type="button" id="clear-area">Clear area</button><button type="button" id="fit">Fit stations</button></div>

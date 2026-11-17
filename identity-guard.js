@@ -5,12 +5,12 @@
   const replacements = new Map([
     ['Uganda Sys_T', 'Data Science Trials Traffic'],
     ['Agency · Data Division · Sys_I', 'Data Science Trials • Traffic Intelligence'],
-    ['System Online', 'Live Traffic System Online'],
+    ['System Online', 'Historical traffic observations loaded'],
     ['Traffic Delay (ADT)', 'Traffic Delay (ADT)'],
     ['Uganda National Roads · Department of National Roads', 'National Road Network Intelligence'],
     ['Sys_T / ATC Station Directory', 'Traffic Station Directory'],
     ['monitoring stations · Sys_T manual counts +', ' monitoring stations; manual counts and '],
-    ['ATC permanent counters · source: Sys_T 2025 AADT analysis', ' permanent counters; continuous telemetry'],
+    ['ATC permanent counters · source: Sys_T 2025 AADT analysis', ' permanent counters; recorded observations'],
     ['Source: Sys_T 2025 AADT analysis.xlsx · TCS_Combined sheet · real Link IDs from network2026.geojson', 'National Station Directory'],
   ]);
   const root = document.getElementById('root');

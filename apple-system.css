@@ -489,3 +489,55 @@ tr:hover td {
   color: #15803D !important;
   border-color: rgba(21, 128, 61, 0.25) !important;
 }
+
+/* Accuracy release: true light surfaces and clear, non-neon interaction hues. */
+:root {
+  color-scheme: light !important;
+  --apple-blue: #2563EB;
+  --apple-teal: #0F8FA8;
+  --apple-green: #278A50;
+  --apple-amber: #B76E00;
+  --apple-red: #C83A34;
+  --apple-ink: #111827;
+  --apple-muted: #526174;
+  --apple-line: #D8DEE8;
+  --apple-canvas: #F5F7FA;
+}
+
+html, body, #root {
+  background: var(--apple-canvas) !important;
+  color: var(--apple-ink) !important;
+}
+
+button, input, select, textarea {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .34) !important;
+  outline-offset: 2px !important;
+}
+
+.maplibregl-popup-content,
+.maplibregl-ctrl-group,
+.maplibregl-ctrl-attrib,
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip,
+.leaflet-control {
+  background: #FFFFFF !important;
+  color: var(--apple-ink) !important;
+  border-color: var(--apple-line) !important;
+}
+
+.maplibregl-popup-content a,
+.leaflet-popup-content a {
+  color: #1D4ED8 !important;
+}
+
+[role="dialog"],
+[role="menu"],
+[role="listbox"] {
+  background-color: #FFFFFF !important;
+  color: var(--apple-ink) !important;
+  border-color: var(--apple-line) !important;
+}
