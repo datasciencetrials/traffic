@@ -541,3 +541,48 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   color: var(--apple-ink) !important;
   border-color: var(--apple-line) !important;
 }
+
+
+/* Traffic Analytics Sub-header & Macro Contrast Overrides */
+[style*="background: #181c24"],
+[style*="background:#181c24"],
+[style*="background: #1e293b"],
+[style*="background:#1e293b"],
+[style*="background: rgb(24, 28, 36)"],
+.forecast-header,
+.analytics-subnav,
+.forecast-topbar {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+[style*="color: #f8fafc"],
+[style*="color:#f8fafc"],
+[style*="color: #fff"],
+[style*="color:#fff"],
+[style*="color: white"] {
+  color: #0F172A !important;
+}
+
+/* Ensure active tab buttons on blue background keep white text */
+button.active, .tab-btn.active, .btn-primary, [style*="background: #0071E3"], [style*="background:#0071E3"], [style*="background: #2563eb"], [style*="background:#2563eb"] {
+  color: #FFFFFF !important;
+}
+button.active *, .tab-btn.active * {
+  color: #FFFFFF !important;
+}
+
+/* Strategic & Deep Charts Axis & Table Contrast */
+table td, table th, .recharts-text, .recharts-cartesian-axis-tick text {
+  fill: #0F172A !important;
+  color: #0F172A !important;
+}
+
+/* Lively Apple card hover lifts and animations */
+.card, .kpi-card, .metric-card, .table-container {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.card:hover, .kpi-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(0, 113, 227, 0.08) !important;
+}
