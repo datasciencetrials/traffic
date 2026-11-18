@@ -14,7 +14,7 @@
             font-family: 'Inter', sans-serif;
         }
         .container {
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 20px;
         }
@@ -34,6 +34,20 @@
             -webkit-text-fill-color: transparent;
         }
     </style>
+<style>
+/* v111: No wide margins - full-width responsive layout */
+body > .container, body > .wrapper, body > main, .page-shell, .app-container,
+.main-content, .content-wrapper, .hero-inner, .portal-shell, .explorer-shell,
+.shell, .layout-container, #app > .container, #root > div > main {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  box-sizing: border-box !important;
+}
+</style>
 </head>
 <body>
     <div class="container">
