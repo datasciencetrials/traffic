@@ -1779,7 +1779,7 @@
       "link_id": "A002_Link07",
       "road_no": "A002",
       "road_class": "A",
-      "link_name": "Lyantonde - Mbarara(Bushenyi junction)",
+      "link_name": "Lyantonde - Mbarara (Bushenyi junction)",
       "chainage_from": 196.228,
       "chainage_to": 263.534,
       "length_km": 67.306,
@@ -1807,7 +1807,7 @@
       "link_id": "A002_Link08",
       "road_no": "A002",
       "road_class": "A",
-      "link_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+      "link_name": "Mbarara (Bushenyi Junction) - Ntungamo",
       "chainage_from": 263.534,
       "chainage_to": 325.263,
       "length_km": 61.729,
@@ -1830,7 +1830,7 @@
           "name": "RWIZI BRIDGE",
           "km": 264,
           "crossing": 1,
-          "road_desc": "Mbarara(Bushenyi Junction)  - Ntungamo",
+          "road_desc": "Mbarara (Bushenyi Junction)  - Ntungamo",
           "river": "RIVER RWIZI",
           "n_spans": null,
           "span_len": null,
@@ -1844,7 +1844,7 @@
           "name": "RWIZI BRIDGE",
           "km": 264,
           "crossing": 1,
-          "road_desc": "Mbarara(Bushenyi Junction)  - Ntungamo",
+          "road_desc": "Mbarara (Bushenyi Junction)  - Ntungamo",
           "river": "RIVER RWIZI",
           "n_spans": null,
           "span_len": null,
@@ -1857,21 +1857,21 @@
         {
           "culvert_no": "C207",
           "new_no": null,
-          "road": "Mbarara(Bushenyi Junction)  - Ntungamo",
+          "road": "Mbarara (Bushenyi Junction)  - Ntungamo",
           "km": 298.73,
           "river": null
         },
         {
           "culvert_no": "C209",
           "new_no": null,
-          "road": "Mbarara(Bushenyi Junction)  - Ntungamo",
+          "road": "Mbarara (Bushenyi Junction)  - Ntungamo",
           "km": 1.96,
           "river": null
         },
         {
           "culvert_no": "C210",
           "new_no": null,
-          "road": "Mbarara(Bushenyi Junction)  - Ntungamo",
+          "road": "Mbarara (Bushenyi Junction)  - Ntungamo",
           "km": 21.6,
           "river": null
         }

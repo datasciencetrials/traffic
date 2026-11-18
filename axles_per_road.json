@@ -457,7 +457,7 @@
   },
   "A002_Link07": {
     "link_id": "A002_Link07",
-    "link_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "link_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "length_km": 67.31,
     "total_adt_2026": 7492,
     "growth_rate": 0.0447,
@@ -481,7 +481,7 @@
   },
   "A002_Link08": {
     "link_id": "A002_Link08",
-    "link_name": "Mbarara(Bushenyi Junction)  - Ntungamo",
+    "link_name": "Mbarara (Bushenyi Junction)  - Ntungamo",
     "length_km": 61.73,
     "total_adt_2026": 2939,
     "growth_rate": 0.0446,

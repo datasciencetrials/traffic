@@ -670,7 +670,7 @@
     "origin_name": "Kibuye - Zana",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 796
   },
@@ -1588,7 +1588,7 @@
     "origin_name": "Kubiri round about - Gayaza",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 876
   },
@@ -3460,7 +3460,7 @@
     "origin_name": "Wobulenzi - Kasana - Luweero",
     "origin_region": "Central",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 1082
   },
@@ -4675,7 +4675,7 @@
     "origin_name": "Nakalama - Bugiri - Namutere",
     "origin_region": "Eastern",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 1308
   },
@@ -6814,7 +6814,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "A001N1_Link01",
     "dest_name": "Njeru - Jinja (Dual Section)",
@@ -6823,7 +6823,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "A006_Link04",
     "dest_name": "Wobulenzi - Kasana - Luweero",
@@ -6832,7 +6832,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "A004_Link02",
     "dest_name": "Kyotera - Mutukula",
@@ -6841,7 +6841,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C454_Link01",
     "dest_name": "Rwashameire-Kyafora-Kiyenje",
@@ -6850,7 +6850,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C422_Link01",
     "dest_name": "Rwentobo - Ngoma - Kizinga",
@@ -6859,7 +6859,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C179_Link01",
     "dest_name": "Old Masaka Road (Kyengera -Kabojja Secondary)",
@@ -6868,7 +6868,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C044_Link01",
     "dest_name": "Buikwe - Lugasa(Makindu)",
@@ -6877,7 +6877,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C564_Link01",
     "dest_name": "Kitumba-Harubako",
@@ -6886,7 +6886,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C172_Link01",
     "dest_name": "Kawuku - Bwerenga",
@@ -6895,7 +6895,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C788_Link01",
     "dest_name": "Iganga - Buniantole",
@@ -6904,7 +6904,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "B203_Link01",
     "dest_name": "Mubende - Kiboyo - Kakumiro",
@@ -6913,7 +6913,7 @@
   },
   {
     "origin_id": "A002_Link07",
-    "origin_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "origin_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "origin_region": "Southern",
     "dest_id": "C163_Link01",
     "dest_name": "MitalaMaria-Bulo-Kanoni",
@@ -7087,7 +7087,7 @@
     "origin_name": "Kiyoora PTC Access",
     "origin_region": "Southern",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 668
   },
@@ -7879,7 +7879,7 @@
     "origin_name": "Luweero - Nakasongola",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 1283
   },
@@ -9139,7 +9139,7 @@
     "origin_name": "FortPortal - Rwimi(bridge)",
     "origin_region": "Western",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 762
   },
@@ -9220,7 +9220,7 @@
     "origin_name": "FortPortal - Rwimi(bridge)",
     "origin_region": "Western",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 518
   },
@@ -11974,7 +11974,7 @@
     "origin_name": "Lugazi - Buikwe",
     "origin_region": "Central",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 262
   },
@@ -12181,7 +12181,7 @@
     "origin_name": "Kawolo Railway access",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 1123
   },
@@ -13738,7 +13738,7 @@
     "origin_name": "Mityana - Naama - Myanzi",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 114
   },
@@ -15106,7 +15106,7 @@
     "origin_name": "Mulanda - Nagongera",
     "origin_region": "Eastern",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 569
   },
@@ -15394,7 +15394,7 @@
     "origin_name": "Nazigo-Kireku-Nkokonjeru-Kitimbwa",
     "origin_region": "Central",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 571
   },
@@ -15880,7 +15880,7 @@
     "origin_name": "Eruba - Arua - Manibe",
     "origin_region": "Northern",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 314
   },
@@ -16942,7 +16942,7 @@
     "origin_name": "Iganga - Mayuge",
     "origin_region": "Eastern",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 167
   },
@@ -17113,7 +17113,7 @@
     "origin_name": "Busolwe-Budumba",
     "origin_region": "Eastern",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 152
   },
@@ -19660,7 +19660,7 @@
     "origin_name": "Mityana-Misigi-Kanoni",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 770
   },
@@ -21208,7 +21208,7 @@
     "origin_name": "Kawuku - Bwerenga",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 590
   },
@@ -21262,7 +21262,7 @@
     "origin_name": "Iganga - Buniantole",
     "origin_region": "Eastern",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 865
   },
@@ -24934,7 +24934,7 @@
     "origin_name": "Kitala - Gerenge",
     "origin_region": "Central",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 950
   },
@@ -25735,7 +25735,7 @@
     "origin_name": "Busesa-Nakivumbi",
     "origin_region": "Eastern",
     "dest_id": "A002_Link08",
-    "dest_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "dest_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "dest_region": "Southern",
     "volume": 164
   },
@@ -25753,7 +25753,7 @@
     "origin_name": "Muguluka-Namagera",
     "origin_region": "Eastern",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 567
   },
@@ -26068,7 +26068,7 @@
     "origin_name": "Kanyago Bridge - Kumi",
     "origin_region": "North Eastern",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 268
   },
@@ -27415,7 +27415,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "A006_Link02",
     "dest_name": "Kawempe - Matuga",
@@ -27424,7 +27424,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "A006_Link04",
     "dest_name": "Wobulenzi - Kasana - Luweero",
@@ -27433,7 +27433,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "C431_Link01",
     "dest_name": "Rubaare - Kyempene",
@@ -27442,7 +27442,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "B152_Link03",
     "dest_name": "Ishaka - Buhinda - Rugazi",
@@ -27451,7 +27451,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "A005_Link11",
     "dest_name": "FortPortal - Rwimi(bridge)",
@@ -27460,7 +27460,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "B307_Link02",
     "dest_name": "Buwenge - Kamuli",
@@ -27469,7 +27469,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "C024_Link01",
     "dest_name": "Mukono-Kyetume-Kisoga-Katosi",
@@ -27478,7 +27478,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "C850_Link01",
     "dest_name": "Busoko - Busaba - Nawanjofu - Hisiro",
@@ -27487,7 +27487,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "A006_Link06",
     "dest_name": "Nakasongola - Kafu",
@@ -27496,7 +27496,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "C562_Link01",
     "dest_name": "Access to Muhooti Army Barracks",
@@ -27505,7 +27505,7 @@
   },
   {
     "origin_id": "A002_Link08",
-    "origin_name": "Mbarara(Bushenyi Junction) - Ntungamo",
+    "origin_name": "Mbarara (Bushenyi Junction) - Ntungamo",
     "origin_region": "Southern",
     "dest_id": "B252_Link05",
     "dest_name": "Madi Opei - Uganda/Sudan border",
@@ -28021,7 +28021,7 @@
     "origin_name": "Isimba - Mbulamuti - Kamuli",
     "origin_region": "Eastern",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 348
   },
@@ -28183,7 +28183,7 @@
     "origin_name": "Minakulu - Bobi - Gulu",
     "origin_region": "Northern",
     "dest_id": "A002_Link07",
-    "dest_name": "Lyantonde - Mbarara(Bushenyi junction)",
+    "dest_name": "Lyantonde - Mbarara (Bushenyi junction)",
     "dest_region": "Southern",
     "volume": 348
   },
