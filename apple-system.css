@@ -611,3 +611,17 @@ button[style*="EXIT FORECAST"] {
   border: 1px solid #FCA5A5 !important;
   color: #DC2626 !important;
 }
+
+/* v108: Enforce pure Apple light theme across all Traffic views */
+body, #root, .traffic-view-container, main {
+  background: #F5F5F7 !important;
+  color: #0F172A !important;
+}
+.sidebar-left, .sidebar-right, .panel, .card, table, thead, th, td {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+.maplibregl-ctrl-top-right {
+  top: 76px !important;
+  right: 12px !important;
+}
