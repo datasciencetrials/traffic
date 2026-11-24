@@ -230,7 +230,7 @@
       const coverage = document.createElement('small'); coverage.textContent = `${fmt.format(item.supplied)} of ${fmt.format(filtered.length)} stations supplied`;
       row.append(label, track, value, coverage); target.append(row);
     }
-    $('classes-status').textContent = `${current.summary.year} official class values for ${fmt.format(filtered.length)} surveyed station records from the Department of National Roads annual traffic census. Each mean uses stations with that class recorded.`;
+    $('classes-status').textContent = `${current.summary.year} official class values for ${fmt.format(filtered.length)} surveyed station records from the NATIONAL ROAD NETWORK ADMINISTRATION annual traffic census. Each mean uses stations with that class recorded.`;
     $('export-classes').disabled = !filtered.length;
   }
   function renderRows() {

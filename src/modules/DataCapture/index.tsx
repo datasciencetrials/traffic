@@ -187,7 +187,7 @@ const availableSchemas = [
         "title": "Night",
         "description": "Enter the specified Night."
       },
-      "ministry_of_works_and_transport": {
+      "road network authority_of_works_and_transport": {
         "type": "string",
         "title": "National Transport Authority",
         "description": "Enter the specified National Transport Authority."
@@ -317,7 +317,7 @@ const availableSchemas = [
         "title": "Night",
         "description": "Enter the specified Night."
       },
-      "ministry_of_works_and_transport": {
+      "road network authority_of_works_and_transport": {
         "type": "string",
         "title": "National Transport Authority",
         "description": "Enter the specified National Transport Authority."
@@ -447,7 +447,7 @@ const availableSchemas = [
         "title": "Night",
         "description": "Enter the specified Night."
       },
-      "ministry_of_works_and_transport": {
+      "road network authority_of_works_and_transport": {
         "type": "string",
         "title": "National Transport Authority",
         "description": "Enter the specified National Transport Authority."
