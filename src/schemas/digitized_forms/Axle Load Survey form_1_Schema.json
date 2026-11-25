@@ -49,8 +49,8 @@
         },
         "uganda_national_roads_authority": {
             "type": "string",
-            "title": "UGANDA NATIONAL ROADS AUTHORITY",
-            "description": "Enter the specified UGANDA NATIONAL ROADS AUTHORITY."
+            "title": "MINISTRY OF WORKS AND TRANSPORT",
+            "description": "Enter the specified MINISTRY OF WORKS AND TRANSPORT."
         },
         "day__________________________": {
             "type": "string",

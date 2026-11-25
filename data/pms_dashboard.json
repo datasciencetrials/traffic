@@ -4,7 +4,7 @@
   "model": {
     "name": "National Roads National Pavement Intelligence Engine",
     "version": "FY 2026/27 Baseline \u00b7 Vision 2040",
-    "algorithm": "MOBICAP(Road condition assesment tool) & ROMDAS(Roughness and rutting machine based testing)",
+    "algorithm": "MOBICAP(Road condition assesment tool) & ROMDAS(Roughness and rutting machine based testing)(Roughness and rutting machine based testing)",
     "metrics": {
       "iri_m_per_km": {
         "r2": 0.93433,
@@ -92,7 +92,7 @@
     {
       "id": "iri_trend",
       "title": "IRI Roughness Progression",
-      "subtitle": "ROMDAS(Roughness and rutting machine based testing)",
+      "subtitle": "ROMDAS(Roughness and rutting machine based testing)(Roughness and rutting machine based testing)",
       "type": "line",
       "unit": "m/km",
       "payload": [
@@ -121,7 +121,7 @@
     {
       "id": "rutting",
       "title": "Rutting Depth Distribution",
-      "subtitle": "ROMDAS(Roughness and rutting machine based testing)",
+      "subtitle": "ROMDAS(Roughness and rutting machine based testing)(Roughness and rutting machine based testing)",
       "type": "bars",
       "unit": "mm",
       "payload": [
@@ -244,7 +244,7 @@
       "unit": "%",
       "payload": [
         {
-          "label": "ROMDAS(Roughness and rutting machine based testing)",
+          "label": "ROMDAS(Roughness and rutting machine based testing)(Roughness and rutting machine based testing)",
           "value": 98.4,
           "samples": 6407
         },
